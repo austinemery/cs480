@@ -8,3 +8,5 @@ PA0 - Displays triangle
 PA1 - Rotation and Orbit of a cube
 
 PA2 - Adding interaction to cube. Controls are in PA2 README.md
+
+PA3 - Added "moon" that orbits the cube. Controls for moon are in PA3 README.md
