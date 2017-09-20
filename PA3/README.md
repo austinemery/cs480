@@ -55,8 +55,9 @@ OpenGL 3.3 will run on the [ubuntu.cse.unr.edu](https://ubuntu.cse.unr.edu/) web
 /usr/NX/scripts/vgl/vglrun ./Tutorial
 ```
 
-#Controls
+##Controls
 
+```bash
 Q - Orbits the planet counterclockwise
 W - Orbits the planet clockwise
 E - Stops the orbit of the planet
@@ -73,7 +74,7 @@ L - Stops the rotation of moon
 
 Space - Stops the rotation and orbit of planet and moon
 Left Mouse Button - changes the rotation and orbit directions of planet and moon
-
+```
 
 
 
