@@ -55,7 +55,7 @@ OpenGL 3.3 will run on the [ubuntu.cse.unr.edu](https://ubuntu.cse.unr.edu/) web
 /usr/NX/scripts/vgl/vglrun ./Tutorial
 ```
 
-#Controls
+## Controls
 
 ```bash
 Left Arrow - Rotates the object counterclockwise
@@ -63,7 +63,7 @@ Right Arrow - Rotates the object clockwise
 Space - Stops the rotation of object
 ```
 
-# Config File
+## Config File
 
 ```bash
 The config file, in the config folder, contains names of objects to be loaded.
@@ -71,7 +71,7 @@ Objects are saved in the objects folder as *.obj files.
 To change the object that is loaded, change the objFileName in the config file.
 ```
 
-# Objects
+## Objects
 
 ```bash
 Objects are saved in the objects folder and are referenced in the config file.
