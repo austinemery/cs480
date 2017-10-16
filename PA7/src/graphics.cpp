@@ -49,11 +49,27 @@ bool Graphics::Initialize(int width, int height)
   // Create the objects
   std::string modelPath = "../planets/";
   std::string texturePath = "../planets/";
-  modelPath.append(objectVector[0].objectName);
-  texturePath.append(objectVector[0].objectName);
+  std::string tempModelPath = modelPath;
+  std::string tempTexturePath = texturePath;
 
-  Sun = new Object(modelPath.append("/sun.obj"), texturePath.append("/sun.jpg"));
+  tempModelPath.append(objectVector[0].objectName);
+  tempTexturePath.append(objectVector[0].objectName);
+
+  tempModelPath.append("/");
+  tempTexturePath.append("/");
+
+  Sun = new Object(tempModelPath.append(objectVector[0].objectModel), tempTexturePath.append(objectVector[0].objectTexture));
   
+  tempModelPath = modelPath;
+  tempTexturePath = texturePath;
+
+  tempModelPath.append(objectVector[1].objectName);
+  tempTexturePath.append(objectVector[1].objectName);
+
+  tempModelPath.append("/");
+  tempTexturePath.append("/");
+
+  Earth = new Object(tempModelPath.append(objectVector[1].objectModel), tempTexturePath.append(objectVector[1].objectTexture));
 
   // Set up the shaders
   m_shader = new Shader();
@@ -126,6 +142,7 @@ void Graphics::Update(unsigned int dt)
 {
   // Update the object
   Sun->Update(dt);
+  Earth->Update(dt);
 
   
 }
@@ -145,9 +162,10 @@ void Graphics::Render()
 
   // Render the object
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(Sun->GetModel()));
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(Earth->GetModel()));
 
   Sun->Render();
-
+  Earth->Render();
   
 
 

@@ -38,23 +38,12 @@ class Graphics
     GLuint aTexture;
 
     Object *Sun;
+    Object *Earth;
     
     std::string vShader;
     std::string fShader;
 
     int numbObjects;
-
-    struct objectStruct
-    {
-        std::string objectName = "";
-        std::string objectModel = "";
-        std::string objectTexture = "";
-        float distanceFromSun = 0;
-        float diameter = 0;
-        float rotationPeriodHours = 0;
-        float orbitPeriodDays = 0;
-        std::string moonOf = "";
-    };
 
     std::vector<objectStruct> objectVector;
 };

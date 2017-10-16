@@ -5,7 +5,7 @@ numbObjects: 2
 
 objectName: Sun
 objectModel: sun.obj
-objectTexture: sun.png
+objectTexture: sun.jpg
 distanceFromSun: 0
 diameter: 1391400
 rotationPeriodHours: 0
@@ -13,8 +13,8 @@ orbitPeriodDays: 0
 moonOf: none
 
 objectName: Earth
-objectModel: moon.obj
-objectTexture: green.png
+objectModel: earth.obj
+objectTexture: earth.jpg
 distanceFromSun: 149.6
 diameter: 12756
 rotationPeriodHours: 23.9

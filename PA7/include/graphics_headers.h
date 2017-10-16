@@ -39,4 +39,16 @@ struct Vertex
   Vertex(glm::vec3 v, glm::vec2 u): vertex(v), uv(u) {}
 };
 
+struct objectStruct
+{
+    std::string objectName = "";
+    std::string objectModel = "";
+    std::string objectTexture = "";
+    float distanceFromSun = 0;
+    float diameter = 0;
+    float rotationPeriodHours = 0;
+    float orbitPeriodDays = 0;
+    std::string moonOf = "";
+};
+
 #endif /* GRAPHICS_HEADERS_H */
