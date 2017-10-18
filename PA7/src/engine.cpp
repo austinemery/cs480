@@ -120,11 +120,16 @@ void Engine::Keyboard()
     }
     else if( m_event.key.keysym.sym == SDLK_EQUALS)
     {
-      m_graphics->incTime();
+      m_graphics->decTime();
+      
     } 
     else if( m_event.key.keysym.sym == SDLK_MINUS )
     {
-      m_graphics->decTime();
+      m_graphics->incTime();
+    }
+    else if( m_event.key.keysym.sym == SDLK_c )
+    {
+      viewingMode = 2;
     }
   }
 

@@ -1,7 +1,7 @@
 vertexShader: passthrough.vert
 fragmentShader: passthrough.frag
 
-numbObjects: 26
+numbObjects: 11
 
 objectName: Sun
 objectModel: sun.obj
