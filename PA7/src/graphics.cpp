@@ -12,6 +12,7 @@ Graphics::~Graphics()
 
 bool Graphics::Initialize(int width, int height)
 {
+
   // Used for the linux OS
   #if !defined(__APPLE__) && !defined(MACOSX)
     // cout << glewGetString(GLEW_VERSION) << endl;
@@ -65,10 +66,17 @@ bool Graphics::Initialize(int width, int height)
 	  objectVector[i].objectTexture = texturePath;
   }
 
-  // Create the object
-  Sun = new Object(objectVector[0]);
+  // Create the objects
 
-  Earth = new Object(objectVector[1]);
+  
+
+  
+  
+  for( index = 0; index < numbObjects; ++index )
+  {   
+    objects.push_back( new Object( objectVector[ index ] ));
+  }
+  
 
   // Set up the shaders
   m_shader = new Shader();
@@ -140,9 +148,11 @@ bool Graphics::Initialize(int width, int height)
 void Graphics::Update(unsigned int dt)
 {
   // Update the object
-  Sun->Update(dt, objectVector[0]);
-  Earth->Update(dt, objectVector[1]);
 
+  for( index = 1; index < numbObjects; ++index )
+  {
+    objects[ index ]->Update(dt, objectVector[ index ] );
+  }
   
 }
 
@@ -160,11 +170,11 @@ void Graphics::Render()
   glUniformMatrix4fv(m_viewMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetView())); 
 
   // Render the object
-  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(Sun->GetModel()));
-  Sun->Render(objectVector[0].objectTexture);
-
-  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(Earth->GetModel()));
-  Earth->Render(objectVector[1].objectTexture);
+  for( index = 0; index < numbObjects; ++index )
+  {
+    glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(objects[ index ]->GetModel()));
+    objects[ index ]->Render(objectVector[ index ].objectTexture); 
+  }
 
   // Get any errors from OpenGL
   auto error = glGetError();
@@ -210,7 +220,7 @@ std::string Graphics::ErrorString(GLenum error)
 
 Object* Graphics::getCube()
 {
-  return Sun;
+  return objects[ 0 ];
 }
 
 void Graphics::readConfig()

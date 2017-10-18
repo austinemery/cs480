@@ -43,9 +43,10 @@ class Graphics
     std::string vShader;
     std::string fShader;
 
-    int numbObjects;
+    int numbObjects, index;
 
     std::vector<objectStruct> objectVector;
+    std::vector<Object*> objects;
 };
 
 #endif /* GRAPHICS_H */

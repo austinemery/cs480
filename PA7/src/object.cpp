@@ -111,6 +111,11 @@ void Object::Update(unsigned int dt, objectStruct objectData)
   {
   	model = glm::translate(model, glm::vec3(2.0, 0.0, 2.0));
   }
+
+  if (objectData.objectName.find("Venus") != std::string::npos)
+  {
+    model = glm::translate(model, glm::vec3(-2.0, 0.0, 2.0));
+  }
                             
   model = glm::rotate(model, (angle_rot), glm::vec3(0.0, 1.0, 0.0));
 
