@@ -73,55 +73,17 @@ Object::~Object()
 
 void Object::Update(unsigned int dt, objectStruct objectData)
 {
-  
-  if( !orbit_stop )
-  {
-    if( !orbit_rev )
-    {
-      angle_orbit += dt * M_PI/1000;
-    }
-    else
-    {
-      angle_orbit -= dt * M_PI/1000;
-    }
-  }
+  angle_orbit += dt * M_PI/100000;
+  angle_rot += dt * M_PI/100000;
 
-  if( !rot_stop )
-  {
-    if( !rot_rev )
-    {
-      angle_rot += dt * M_PI/4000;
-    }
-    else
-    {
-      angle_rot -= dt * M_PI/4000;
-    }
-  }
-
-  origin.x = ORBIT_R * cos( angle_orbit * ORBITAL_SPEED_RATIO  );
-  origin.y = ORBIT_R * sin( angle_orbit * ORBITAL_SPEED_RATIO  );
-  
-  //std::cout << origin.x << " " << origin.y << std::endl;
+  origin.x = distanceFromSun / 10 * cos( angle_orbit * orbitPeriod  );
+  origin.y = distanceFromSun / 10 * sin( angle_orbit * orbitPeriod  );
 
   model = glm::scale(glm::mat4(1.0f), glm::vec3(2, 2, 2) );
 
   model = glm::translate(model, glm::vec3(origin.x, 0.0, origin.y));
-
-  if (objectData.objectName.find("Earth") != std::string::npos)
-  {
-  	model = glm::translate(model, glm::vec3(2.0, 0.0, 2.0));
-  }
-
-  if (objectData.objectName.find("Venus") != std::string::npos)
-  {
-    model = glm::translate(model, glm::vec3(-2.0, 0.0, 2.0));
-  }
                             
-  model = glm::rotate(model, (angle_rot), glm::vec3(0.0, 1.0, 0.0));
-
-  std::vector<float> v;
-  
-  
+  model = glm::rotate(model, (angle_rot * rotationPeriod), glm::vec3(0.0, 1.0, 0.0)); 
   
   
 }
