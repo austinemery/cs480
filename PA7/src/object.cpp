@@ -101,7 +101,7 @@ void Object::Update(unsigned int dt, objectStruct objectData)
   origin.x = ORBIT_R * cos( angle_orbit * ORBITAL_SPEED_RATIO  );
   origin.y = ORBIT_R * sin( angle_orbit * ORBITAL_SPEED_RATIO  );
   
-  std::cout << origin.x << " " << origin.y << std::endl;
+  //std::cout << origin.x << " " << origin.y << std::endl;
 
   model = glm::scale(glm::mat4(1.0f), glm::vec3(2, 2, 2) );
 
@@ -119,6 +119,8 @@ void Object::Update(unsigned int dt, objectStruct objectData)
                             
   model = glm::rotate(model, (angle_rot), glm::vec3(0.0, 1.0, 0.0));
 
+  std::vector<float> v;
+  
   
   
   
@@ -255,4 +257,12 @@ int Object::getNumber( std::string &inString )
     temp.push_back( inString[ index ]);
     index++;
   }
+}
+
+void Object::setPlanetVals( float a, float b, float c, float d )
+{
+  distanceFromSun = a;
+  diameter = b;
+  orbitPeriod = c;
+  rotationPeriod = d;
 }

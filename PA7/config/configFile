@@ -1,7 +1,7 @@
 vertexShader: passthrough.vert
 fragmentShader: passthrough.frag
 
-numbObjects: 4
+numbObjects: 5
 
 objectName: Skybox
 objectModel: skybox.obj
@@ -33,6 +33,15 @@ moonOf: none
 objectName: Venus
 objectModel: venus.obj
 objectTexture: venus.jpg
+distanceFromSun: 149.6
+diameter: 12756
+rotationPeriodHours: 23.9
+orbitPeriodDays: 365.2
+moonOf: none
+
+objectName: Satring
+objectModel: satring.obj
+objectTexture: satring.jpg
 distanceFromSun: 149.6
 diameter: 12756
 rotationPeriodHours: 23.9

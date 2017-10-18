@@ -1,5 +1,8 @@
 #include "graphics.h"
 
+
+void normVect( std::vector<float> &in);
+
 Graphics::Graphics()
 {
 
@@ -67,14 +70,28 @@ bool Graphics::Initialize(int width, int height)
   }
 
   // Create the objects
-
-  
-
-  
-  
   for( index = 0; index < numbObjects; ++index )
   {   
     objects.push_back( new Object( objectVector[ index ] ));
+  }
+
+  // Set up planet data
+  std::vector<float> fromSun;
+  std::vector<float> diameter;
+  std::vector<float> rotation;
+  std::vector<float> orbit;
+
+  for( index = 0; index < numbObjects; ++index )
+  {
+    fromSun.push_back( objectVector[index].distanceFromSun);
+    diameter.push_back( objectVector[index].diameter);
+    rotation.push_back( objectVector[index].rotationPeriodHours);
+    orbit.push_back( objectVector[index].orbitPeriodDays );
+  }
+
+  for( index = 0; index < numbObjects; ++index )
+  {
+    objects[ index ]->setPlanetVals( fromSun[ index ], diameter[ index ], rotation[ index ], orbit[ index ] );
   }
   
 
@@ -312,3 +329,33 @@ void Graphics::readConfig()
   fin.close();
 }
 
+void normVect( std::vector<float> &in)
+{
+  int minIndex = 0;
+  int index;
+
+  float min;
+
+  for( index = 1; index < in.size(); ++index )
+  {
+    if( in[ minIndex ] > in[ index ] && in[ index ] != 0.0 && in[ index ] != 0 )
+    {
+      minIndex = index;
+    }
+
+    if( in[ minIndex ] == 0.0 )
+    {
+      minIndex++;
+    }
+  }
+
+  min = in[ minIndex ];
+
+  for( index = 0; index < in.size(); ++index )
+  {
+    cout << in[ index ] << ' ';
+    in[ index ] = in[ index ] / min;
+    cout << in[ index ] << endl;
+  }
+
+}

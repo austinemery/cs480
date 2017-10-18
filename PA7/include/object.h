@@ -22,11 +22,14 @@ class Object
     void rotateLeft();
     void rotateRight();
 
+    void setPlanetVals( float a, float b, float c, float d);
+
     glm::vec2 getOrigin();
     
     
 
     glm::mat4 GetModel();
+
 
 
 
@@ -52,6 +55,11 @@ class Object
     bool rot_stop;
 
     glm::vec2 origin;
+
+    float distanceFromSun;
+    float diameter;
+    float orbitPeriod;
+    float rotationPeriod;
 
     int getNumberOfSlashes( std::string inString );
     int getNumber( std::string &inString );
