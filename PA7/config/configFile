@@ -119,3 +119,138 @@ diameter: 2370
 rotationPeriodHours: -153.3
 orbitPeriodDays: 90560
 moonOf: none
+
+objectName: Moon
+objectModel: moon.obj
+objectTexture: moon.jpg
+distanceFromSun: 2.4
+diameter: 3474
+rotationPeriodHours: 27.32
+orbitPeriodDays: 27
+moonOf: 3
+
+objectName: Delmos
+objectModel: delmos.obj
+objectTexture: delmos.jpg
+distanceFromSun: 0.023
+diameter: 12.4
+rotationPeriodHours: 1.263
+orbitPeriodDays: 1.263
+moonOf: 4
+
+objectName: Phobos
+objectModel: phobos.obj
+objectTexture: phobos.jpg
+distanceFromSun: 0.009517
+diameter: 22
+rotationPeriodHours: 0.319
+orbitPeriodDays: 0.319
+moonOf: 4
+
+objectName: Ganymede
+objectModel: ganymede.obj
+objectTexture: ganymede.jpg
+distanceFromSun: 1.069
+diameter: 5268.2
+rotationPeriodHours: 7.155
+orbitPeriodDays: 7.155
+moonOf: 5
+
+objectName: Callisto
+objectModel: callisto.obj
+objectTexture: callisto.jpg
+distanceFromSun: 1.869
+diameter: 4820.6
+rotationPeriodHours: 16.689
+orbitPeriodDays: 16.689
+moonOf: 5
+
+objectName: Io
+objectModel: io.obj
+objectTexture: io.jpg
+distanceFromSun: 0.420
+diameter: 3643.2
+rotationPeriodHours: 1.769
+orbitPeriodDays: 1.769
+moonOf: 5
+
+objectName: Europa
+objectModel: europa.obj
+objectTexture: europa.jpg
+distanceFromSun: 0.6709
+diameter: 3121.2
+rotationPeriodHours: 3.551
+orbitPeriodDays: 3.551
+moonOf: 5
+
+objectName: Titan
+objectModel: titan.obj
+objectTexture: titan.jpg
+distanceFromSun: 1.257
+diameter: 3151
+rotationPeriodHours: 15.945
+orbitPeriodDays: 15.945
+moonOf: 6
+
+objectName: Rhea
+objectModel: rhea.obj
+objectTexture: rhea.jpg
+distanceFromSun: 0.527
+diameter: 1527.6
+rotationPeriodHours: 4.518
+orbitPeriodDays: 4.518
+moonOf: 6
+
+objectName: Iapetus
+objectModel: iapetus.obj
+objectTexture: iapetus.jpg
+distanceFromSun: 3.560
+diameter: 1469
+rotationPeriodHours: 79.3215
+orbitPeriodDays: 79.3215
+moonOf: 6
+
+objectName: Dione
+objectModel: dione.obj
+objectTexture: dione.jpg
+distanceFromSun: 0.377
+diameter: 1122.8
+rotationPeriodHours: 2.734
+orbitPeriodDays: 2.734
+moonOf: 6
+
+objectName: Titania
+objectModel: titania.obj
+objectTexture: titania.jpg
+distanceFromSun: 0.456
+diameter: 1576.8
+rotationPeriodHours: 8.706
+orbitPeriodDays: 8.706
+moonOf: 7
+
+objectName: Oberon
+objectModel: oberon.obj
+objectTexture: oberon.jpg
+distanceFromSun: 0.584
+diameter: 1522.8
+rotationPeriodHours: 13.463
+orbitPeriodDays: 13.463
+moonOf: 7
+
+objectName: Triton
+objectModel: triton.obj
+objectTexture: triton.jpg
+distanceFromSun: 0.3547
+diameter: 2706.8
+rotationPeriodHours: -5.876
+orbitPeriodDays: -5.876
+moonOf: 8
+
+objectName: Charon
+objectModel: charon.obj
+objectTexture: charon.jpg
+distanceFromSun: 0.017
+diameter: 420
+rotationPeriodHours: 6.387
+orbitPeriodDays: 6,387
+moonOf: 9
