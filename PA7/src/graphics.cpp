@@ -358,9 +358,9 @@ void normVect( std::vector<float> &in)
 
   for( index = 0; index < in.size(); ++index )
   {
-    //cout << in[ index ] << ' ';
+    cout << in[ index ] << ' ';
     in[ index ] = in[ index ] / min;
-    //cout << in[ index ] << endl;
+    cout << in[ index ] << endl;
   }
-
+  cout << endl;
 }

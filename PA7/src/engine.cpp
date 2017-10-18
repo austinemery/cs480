@@ -70,7 +70,7 @@ void Engine::Run()
 
     // Update the DT
     m_DT = getDT();
-
+    cout << m_DT << endl;
 
     // Update and render the graphics
     m_graphics->Update(m_DT, objSelector, viewingMode);

@@ -26,7 +26,7 @@ objectModel: venus.obj
 objectTexture: venus.jpg
 distanceFromSun: 108.2
 diameter: 12104
-rotationPeriodHours: -5832.5
+rotationPeriodHours: 5832.5
 orbitPeriodDays: 224.7
 moonOf: none
 
@@ -38,7 +38,6 @@ diameter: 12756
 rotationPeriodHours: 23.9
 orbitPeriodDays: 365.25
 moonOf: none
-
 
 objectName: Mars
 objectModel: mars.obj
@@ -72,7 +71,7 @@ objectModel: uranus.obj
 objectTexture: uranus.jpg
 distanceFromSun: 2872.5
 diameter: 51118
-rotationPeriodHours: -17.2
+rotationPeriodHours: 17.2
 orbitPeriodDays: 30589
 moonOf: none
 
@@ -90,7 +89,7 @@ objectModel: pluto.obj
 objectTexture: pluto.jpg
 distanceFromSun: 5906.4
 diameter: 2370
-rotationPeriodHours: -153.3
+rotationPeriodHours: 153.3
 orbitPeriodDays: 90560
 moonOf: none
 
@@ -101,6 +100,15 @@ distanceFromSun: 1433.5
 diameter: 120536
 rotationPeriodHours: 10.7
 orbitPeriodDays: 10747
+moonOf: none
+
+objectName: Skybox
+objectModel: skybox.obj
+objectTexture: skybox.png
+distanceFromSun: 0
+diameter: 0
+rotationPeriodHours: 0
+orbitPeriodDays: 0
 moonOf: none
 
 objectName: Moon
