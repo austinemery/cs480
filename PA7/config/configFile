@@ -1,7 +1,7 @@
 vertexShader: passthrough.vert
 fragmentShader: passthrough.frag
 
-numbObjects: 3
+numbObjects: 11
 
 
 
@@ -72,10 +72,10 @@ moonOf: none
 objectName: Satring
 objectModel: satring.obj
 objectTexture: satring.jpg
-distanceFromSun: 149.6
-diameter: 12756
-rotationPeriodHours: 23.9
-orbitPeriodDays: 365.25
+distanceFromSun: 1433.5
+diameter: 120536
+rotationPeriodHours: 10.7
+orbitPeriodDays: 10747
 moonOf: none
 
 objectName: Uranus

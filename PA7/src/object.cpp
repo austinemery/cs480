@@ -68,14 +68,12 @@ Object::~Object()
 
 void Object::Update(unsigned int dt, objectStruct objectData)
 {
-  
-  angle_orbit += dt * M_PI/10000 * orbitPeriod;
-  angle_rot += dt * M_PI/10000 * rotationPeriod * 365.25;
-  
-  cout << angle_orbit << endl;
+  dt = dt;
+  angle_orbit += dt * M_PI/100000 * orbitPeriod;
+  angle_rot += dt * M_PI/100000 * rotationPeriod * 365.25;
 
-  origin.x = distanceFromSun * 10  * cos( angle_orbit );
-  origin.y = distanceFromSun * 10 * sin( angle_orbit );
+  origin.x = distanceFromSun  * cos( angle_orbit );
+  origin.y = distanceFromSun  * sin( angle_orbit );
 
   //model = glm::scale(glm::mat4(1.0f), glm::vec3(.1, .1, .1) );
   //cout << diameter << endl;
