@@ -39,7 +39,7 @@ glm::mat4 MyCamera::GetView()
 
 void MyCamera::updateCameraPosition(objectStruct objectData, glm::vec2 position)
 {
-  view = glm::lookAt( glm::vec3(position.x + 1, 1, position.y + 1), //Eye Position
+  view = glm::lookAt( glm::vec3(position.x + 30, 30, position.y + 30), //Eye Position
                       glm::vec3(position.x, 0.0, position.y), //Focus point
                       glm::vec3(0.0, 1.0, 0.0));
 }

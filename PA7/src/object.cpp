@@ -70,7 +70,6 @@ void Object::Update(unsigned int dt, objectStruct objectData, glm::vec2 orbitCen
 {
   if (objectData.moonOf != -1)
   {
-    //std::cout << moonOrbitCenter.objectName << std::endl;
     model = glm::translate(model, glm::vec3(orbitCenter.x, 0.0, orbitCenter.y));
   }
 
@@ -79,12 +78,12 @@ void Object::Update(unsigned int dt, objectStruct objectData, glm::vec2 orbitCen
   //angle_orbit += (float) dt * M_PI/1000 ;
   //angle_rot += (float) dt * M_PI/1000  ;
 
-  origin.x = distanceFromSun  * cos( angle_orbit );
-  origin.y = distanceFromSun  * sin( angle_orbit );
+  origin.x = distanceFromSun * cos( angle_orbit );
+  origin.y = distanceFromSun * sin( angle_orbit );
   
   if( orbitPeriod != 0)
   {
-    angle_orbit += (((float) dt * M_PI/1000) / orbitPeriod) / 50 ;
+    angle_orbit += (((float) dt * M_PI/1000) / orbitPeriod) / 50000 ;
     angle_rot += ((((float) dt * M_PI/1000) / rotationPeriod ) * 365.25) / 50 ;
   }
   
@@ -92,7 +91,7 @@ void Object::Update(unsigned int dt, objectStruct objectData, glm::vec2 orbitCen
   origin.y = 8. * distanceFromSun  * sin( angle_orbit );
 
   //model = glm::scale(glm::mat4(1.0f), glm::vec3(.1, .1, .1) );
-  model = glm::scale(glm::mat4(1.0f), glm::vec3( 1,1,1) );
+  model = glm::scale(glm::mat4(1.0f), glm::vec3( 1,1,1 ) );
 
   model = glm::translate(model, glm::vec3(origin.x, 0.0, origin.y));
                             
