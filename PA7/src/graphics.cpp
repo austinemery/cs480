@@ -56,8 +56,16 @@ bool Graphics::Initialize(int width, int height)
 	  std::string modelPath = "../planets/";
 	  std::string texturePath = "../planets/";
 
-	  modelPath.append(objectVector[i].objectName);
-	  texturePath.append(objectVector[i].objectName);
+    if (objectVector[i].moonOf == -1)
+    {
+	     modelPath.append(objectVector[i].objectName);
+	     texturePath.append(objectVector[i].objectName);
+    }
+    else 
+    {
+       modelPath.append("Moon");
+       texturePath.append("Moon");
+    }
 
 	  modelPath.append("/");
 	  texturePath.append("/");
@@ -172,7 +180,14 @@ void Graphics::Update(unsigned int dt, int objSelector, int viewingMode)
 
   for( index = 0; index < numbObjects; ++index )
   {
-    objects[ index ]->Update(dt, objectVector[ index ] );
+    if (objectVector[ index ].moonOf == -1)
+    {
+      objects[ index ]->Update(dt, objectVector[ index ], objects[ 0 ]->getOrigin() );
+    }
+    else 
+    {
+      objects[ index ]->Update(dt, objectVector[ index ], objects[ objectVector[ index ].moonOf ]->getOrigin() );
+    }
   }
 
   m_camera->updateCameraPosition(objectVector[objSelector], objects[objSelector]->getOrigin());    

@@ -9,7 +9,7 @@ class Object
   public:
     Object(objectStruct);
     ~Object();
-    void Update(unsigned int dt, objectStruct);
+    void Update(unsigned int dt, objectStruct, glm::vec2);
     void Render(std::string);
 
     void loadModel( std::string model, std::string texture );

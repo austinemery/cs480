@@ -50,7 +50,7 @@ struct objectStruct
     float diameter = 0;
     float rotationPeriodHours = 0;
     float orbitPeriodDays = 0;
-    std::string moonOf = "";
+    int moonOf = -1;
 };
 
 #endif /* GRAPHICS_HEADERS_H */

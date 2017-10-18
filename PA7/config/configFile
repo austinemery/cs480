@@ -1,7 +1,7 @@
 vertexShader: passthrough.vert
 fragmentShader: passthrough.frag
 
-numbObjects: 11
+numbObjects: 26
 
 objectName: Sun
 objectModel: sun.obj
@@ -10,7 +10,7 @@ distanceFromSun: 0
 diameter: 12756
 rotationPeriodHours: 0
 orbitPeriodDays: 0
-moonOf: none
+moonOf: -1
 
 objectName: Mercury
 objectModel: mercury.obj
@@ -19,7 +19,7 @@ distanceFromSun: 57.9
 diameter: 4879
 rotationPeriodHours: 1407.6
 orbitPeriodDays: 88.0
-moonOf: none
+moonOf: -1
 
 objectName: Venus
 objectModel: venus.obj
@@ -28,7 +28,7 @@ distanceFromSun: 108.2
 diameter: 12104
 rotationPeriodHours: 5832.5
 orbitPeriodDays: 224.7
-moonOf: none
+moonOf: -1
 
 objectName: Earth
 objectModel: earth.obj
@@ -37,7 +37,7 @@ distanceFromSun: 149.6
 diameter: 12756
 rotationPeriodHours: 23.9
 orbitPeriodDays: 365.25
-moonOf: none
+moonOf: -1
 
 objectName: Mars
 objectModel: mars.obj
@@ -46,7 +46,7 @@ distanceFromSun: 227.9
 diameter: 6792
 rotationPeriodHours: 24.6
 orbitPeriodDays: 687
-moonOf: none
+moonOf: -1
 
 objectName: Jupiter
 objectModel: jupiter.obj
@@ -55,7 +55,7 @@ distanceFromSun: 778.6
 diameter: 142984
 rotationPeriodHours: 9.9
 orbitPeriodDays: 4331
-moonOf: none
+moonOf: -1
 
 objectName: Saturn
 objectModel: saturn.obj
@@ -64,7 +64,7 @@ distanceFromSun: 1433.5
 diameter: 120536
 rotationPeriodHours: 10.7
 orbitPeriodDays: 10747
-moonOf: none
+moonOf: -1
 
 objectName: Uranus
 objectModel: uranus.obj
@@ -73,7 +73,7 @@ distanceFromSun: 2872.5
 diameter: 51118
 rotationPeriodHours: 17.2
 orbitPeriodDays: 30589
-moonOf: none
+moonOf: -1
 
 objectName: Neptune
 objectModel: neptune.obj
@@ -82,7 +82,7 @@ distanceFromSun: 4495.1
 diameter: 49528
 rotationPeriodHours: 16.1
 orbitPeriodDays: 59800
-moonOf: none
+moonOf: -1
 
 objectName: Pluto
 objectModel: pluto.obj
@@ -91,7 +91,7 @@ distanceFromSun: 5906.4
 diameter: 2370
 rotationPeriodHours: 153.3
 orbitPeriodDays: 90560
-moonOf: none
+moonOf: -1
 
 objectName: Satring
 objectModel: satring.obj
@@ -100,16 +100,7 @@ distanceFromSun: 1433.5
 diameter: 120536
 rotationPeriodHours: 10.7
 orbitPeriodDays: 10747
-moonOf: none
-
-objectName: Skybox
-objectModel: skybox.obj
-objectTexture: skybox.png
-distanceFromSun: 0
-diameter: 0
-rotationPeriodHours: 0
-orbitPeriodDays: 0
-moonOf: none
+moonOf: -1
 
 objectName: Moon
 objectModel: moon.obj
@@ -121,8 +112,8 @@ orbitPeriodDays: 27
 moonOf: 3
 
 objectName: Delmos
-objectModel: delmos.obj
-objectTexture: delmos.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.023
 diameter: 12.4
 rotationPeriodHours: 1.263
@@ -130,8 +121,8 @@ orbitPeriodDays: 1.263
 moonOf: 4
 
 objectName: Phobos
-objectModel: phobos.obj
-objectTexture: phobos.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.009517
 diameter: 22
 rotationPeriodHours: 0.319
@@ -139,8 +130,8 @@ orbitPeriodDays: 0.319
 moonOf: 4
 
 objectName: Ganymede
-objectModel: ganymede.obj
-objectTexture: ganymede.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 1.069
 diameter: 5268.2
 rotationPeriodHours: 7.155
@@ -148,8 +139,8 @@ orbitPeriodDays: 7.155
 moonOf: 5
 
 objectName: Callisto
-objectModel: callisto.obj
-objectTexture: callisto.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 1.869
 diameter: 4820.6
 rotationPeriodHours: 16.689
@@ -157,8 +148,8 @@ orbitPeriodDays: 16.689
 moonOf: 5
 
 objectName: Io
-objectModel: io.obj
-objectTexture: io.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.420
 diameter: 3643.2
 rotationPeriodHours: 1.769
@@ -166,8 +157,8 @@ orbitPeriodDays: 1.769
 moonOf: 5
 
 objectName: Europa
-objectModel: europa.obj
-objectTexture: europa.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.6709
 diameter: 3121.2
 rotationPeriodHours: 3.551
@@ -175,8 +166,8 @@ orbitPeriodDays: 3.551
 moonOf: 5
 
 objectName: Titan
-objectModel: titan.obj
-objectTexture: titan.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 1.257
 diameter: 3151
 rotationPeriodHours: 15.945
@@ -184,8 +175,8 @@ orbitPeriodDays: 15.945
 moonOf: 6
 
 objectName: Rhea
-objectModel: rhea.obj
-objectTexture: rhea.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.527
 diameter: 1527.6
 rotationPeriodHours: 4.518
@@ -193,8 +184,8 @@ orbitPeriodDays: 4.518
 moonOf: 6
 
 objectName: Iapetus
-objectModel: iapetus.obj
-objectTexture: iapetus.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 3.560
 diameter: 1469
 rotationPeriodHours: 79.3215
@@ -202,8 +193,8 @@ orbitPeriodDays: 79.3215
 moonOf: 6
 
 objectName: Dione
-objectModel: dione.obj
-objectTexture: dione.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.377
 diameter: 1122.8
 rotationPeriodHours: 2.734
@@ -211,8 +202,8 @@ orbitPeriodDays: 2.734
 moonOf: 6
 
 objectName: Titania
-objectModel: titania.obj
-objectTexture: titania.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.456
 diameter: 1576.8
 rotationPeriodHours: 8.706
@@ -220,8 +211,8 @@ orbitPeriodDays: 8.706
 moonOf: 7
 
 objectName: Oberon
-objectModel: oberon.obj
-objectTexture: oberon.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.584
 diameter: 1522.8
 rotationPeriodHours: 13.463
@@ -229,8 +220,8 @@ orbitPeriodDays: 13.463
 moonOf: 7
 
 objectName: Triton
-objectModel: triton.obj
-objectTexture: triton.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.3547
 diameter: 2706.8
 rotationPeriodHours: -5.876
@@ -238,10 +229,19 @@ orbitPeriodDays: -5.876
 moonOf: 8
 
 objectName: Charon
-objectModel: charon.obj
-objectTexture: charon.jpg
+objectModel: moon.obj
+objectTexture: moon.jpg
 distanceFromSun: 0.017
 diameter: 420
 rotationPeriodHours: 6.387
-orbitPeriodDays: 6,387
+orbitPeriodDays: 6.387
 moonOf: 9
+
+objectName: Skybox
+objectModel: skybox.obj
+objectTexture: skybox.png
+distanceFromSun: 0
+diameter: 0
+rotationPeriodHours: 0
+orbitPeriodDays: 0
+moonOf: -1

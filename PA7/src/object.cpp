@@ -66,8 +66,14 @@ Object::~Object()
   Indices.clear();
 }
 
-void Object::Update(unsigned int dt, objectStruct objectData)
+void Object::Update(unsigned int dt, objectStruct objectData, glm::vec2 orbitCenter)
 {
+  if (objectData.moonOf != -1)
+  {
+    //std::cout << moonOrbitCenter.objectName << std::endl;
+    model = glm::translate(model, glm::vec3(orbitCenter.x, 0.0, orbitCenter.y));
+  }
+
   //cout << (float) dt * M_PI/1000 << endl;
 
   //angle_orbit += (float) dt * M_PI/1000 ;
@@ -82,7 +88,6 @@ void Object::Update(unsigned int dt, objectStruct objectData)
   model = glm::translate(model, glm::vec3(origin.x, 0.0, origin.y));
                             
   //model = glm::rotate(model, (angle_rot), glm::vec3(0.0, 1.0, 0.0));
-  
   
 }
 
