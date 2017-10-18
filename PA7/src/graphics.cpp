@@ -202,12 +202,12 @@ void Graphics::Update(unsigned int dt, int objSelector, int viewingMode)
 
   if( viewingMode == 1 )
   {
-    m_camera->updateCameraPosition( {0,850, 0});
+    m_camera->updateCameraPosition( {0,85000, 0});
   }
 
   if( viewingMode == 2)
   {
-    m_camera->updateCameraPosition( {0,200, 0});
+    m_camera->updateCameraPosition( {0,20000, 0});
   }
 }
 
