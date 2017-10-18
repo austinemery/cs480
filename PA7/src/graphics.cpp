@@ -46,30 +46,29 @@ bool Graphics::Initialize(int width, int height)
 
   readConfig();
 
-  // Create the objects
-  std::string modelPath = "../planets/";
-  std::string texturePath = "../planets/";
-  std::string tempModelPath = modelPath;
-  std::string tempTexturePath = texturePath;
+  //get textures right
+  for (int i = 0; i < numbObjects; i++)
+  {
+	  std::string modelPath = "../planets/";
+	  std::string texturePath = "../planets/";
 
-  tempModelPath.append(objectVector[0].objectName);
-  tempTexturePath.append(objectVector[0].objectName);
+	  modelPath.append(objectVector[i].objectName);
+	  texturePath.append(objectVector[i].objectName);
 
-  tempModelPath.append("/");
-  tempTexturePath.append("/");
+	  modelPath.append("/");
+	  texturePath.append("/");
 
-  Sun = new Object(tempModelPath.append(objectVector[0].objectModel), tempTexturePath.append(objectVector[0].objectTexture));
-  
-  tempModelPath = modelPath;
-  tempTexturePath = texturePath;
+	  modelPath.append(objectVector[i].objectModel);
+	  texturePath.append(objectVector[i].objectTexture);
 
-  tempModelPath.append(objectVector[1].objectName);
-  tempTexturePath.append(objectVector[1].objectName);
+	  objectVector[i].objectModel = modelPath;
+	  objectVector[i].objectTexture = texturePath;
+  }
 
-  tempModelPath.append("/");
-  tempTexturePath.append("/");
+  // Create the object
+  Sun = new Object(objectVector[0]);
 
-  Earth = new Object(tempModelPath.append(objectVector[1].objectModel), tempTexturePath.append(objectVector[1].objectTexture));
+  Earth = new Object(objectVector[1]);
 
   // Set up the shaders
   m_shader = new Shader();
@@ -141,8 +140,8 @@ bool Graphics::Initialize(int width, int height)
 void Graphics::Update(unsigned int dt)
 {
   // Update the object
-  Sun->Update(dt);
-  Earth->Update(dt);
+  Sun->Update(dt, objectVector[0]);
+  Earth->Update(dt, objectVector[1]);
 
   
 }
@@ -162,12 +161,10 @@ void Graphics::Render()
 
   // Render the object
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(Sun->GetModel()));
+  Sun->Render(objectVector[0].objectTexture);
+
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(Earth->GetModel()));
-
-  Sun->Render();
-  Earth->Render();
-  
-
+  Earth->Render(objectVector[1].objectTexture);
 
   // Get any errors from OpenGL
   auto error = glGetError();

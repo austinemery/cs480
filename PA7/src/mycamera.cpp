@@ -37,4 +37,7 @@ glm::mat4 MyCamera::GetView()
   return view;
 }
 
+void updateCamera(objectStruct objectData)
+{
 
+}

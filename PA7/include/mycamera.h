@@ -11,7 +11,8 @@ class MyCamera
     bool Initialize(int w, int h);
     glm::mat4 GetProjection();
     glm::mat4 GetView();
-  
+  	void updateCamera(objectStruct objectData);
+
   private:
     glm::mat4 projection;
     glm::mat4 view;

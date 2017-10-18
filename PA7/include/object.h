@@ -7,10 +7,10 @@
 class Object
 {
   public:
-    Object( std::string model, std::string texture  );
+    Object(objectStruct);
     ~Object();
-    void Update(unsigned int dt);
-    void Render();
+    void Update(unsigned int dt, objectStruct);
+    void Render(std::string);
 
     void loadModel( std::string model, std::string texture );
 
