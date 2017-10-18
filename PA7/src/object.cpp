@@ -79,7 +79,7 @@ void Object::Update(unsigned int dt, objectStruct objectData)
 
   //model = glm::scale(glm::mat4(1.0f), glm::vec3(.1, .1, .1) );
   //cout << diameter << endl;
-  model = glm::scale(glm::mat4(1.0f), glm::vec3(diameter / 2, diameter/2, diameter/2) );
+  model = glm::scale(glm::mat4(1.0f), glm::vec3(1, 1, 1) );
 
   model = glm::translate(model, glm::vec3(origin.x, 0.0, origin.y));
                             
