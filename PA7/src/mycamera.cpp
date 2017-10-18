@@ -43,3 +43,10 @@ void MyCamera::updateCameraPosition(objectStruct objectData, glm::vec2 position)
                       glm::vec3(position.x, 0.0, position.y), //Focus point
                       glm::vec3(0.0, 1.0, 0.0));
 }
+
+void MyCamera::updateCameraPosition( glm::vec3 data)
+{
+  view = glm::lookAt( glm::vec3(data.x, data.y, data.z), //Eye Position
+                      glm::vec3(0.0, 0.0, 0.0), //Focus point
+                      glm::vec3(0.0, 0.0, -1.0));
+}

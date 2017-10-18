@@ -15,6 +15,7 @@ Graphics::~Graphics()
 
 bool Graphics::Initialize(int width, int height)
 {
+  timescale = 300;
 
   // Used for the linux OS
   #if !defined(__APPLE__) && !defined(MACOSX)
@@ -173,10 +174,18 @@ void Graphics::Update(unsigned int dt, int objSelector, int viewingMode)
 
   for( index = 0; index < numbObjects; ++index )
   {
-    objects[ index ]->Update(dt, objectVector[ index ] );
+    objects[ index ]->Update(dt, objectVector[ index ], timescale );
   }
 
-  m_camera->updateCameraPosition(objectVector[objSelector], objects[objSelector]->getOrigin());    
+  if( viewingMode == 0 )
+  {
+    m_camera->updateCameraPosition(objectVector[objSelector], objects[objSelector]->getOrigin());    
+  }
+
+  if( viewingMode == 1 )
+  {
+    m_camera->updateCameraPosition( {0,850, 0});
+  }
 }
 
 void Graphics::Render()
@@ -364,4 +373,20 @@ void normVect( std::vector<float> &in)
     cout << in[ index ] << endl;
   }
   cout << endl;
+}
+
+void Graphics::incTime()
+{
+  timescale += 30;
+}
+void Graphics::decTime()
+{
+  if( timescale != 10 )
+  {
+
+  }
+  else
+  {
+    timescale -= 30;
+  }
 }

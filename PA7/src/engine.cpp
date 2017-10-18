@@ -97,10 +97,12 @@ void Engine::Keyboard()
     //This changes the viewing modes
     else if( m_event.key.keysym.sym == SDLK_v )
     {
-      viewingMode = (viewingMode + 1) % 1;
+     viewingMode = 1; 
+
     }
     else if( m_event.key.keysym.sym == SDLK_LEFT )
     {
+      viewingMode = 0;
       if( objSelector == 0)
       {
         objSelector = 9;
@@ -113,7 +115,16 @@ void Engine::Keyboard()
     }
     else if( m_event.key.keysym.sym == SDLK_RIGHT )
     {
+      viewingMode = 0;
       objSelector = ((objSelector + 1) % 10);
+    }
+    else if( m_event.key.keysym.sym == SDLK_EQUALS)
+    {
+      m_graphics->incTime();
+    } 
+    else if( m_event.key.keysym.sym == SDLK_MINUS )
+    {
+      m_graphics->decTime();
     }
   }
 

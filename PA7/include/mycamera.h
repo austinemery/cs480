@@ -12,6 +12,7 @@ class MyCamera
     glm::mat4 GetProjection();
     glm::mat4 GetView();
   	void updateCameraPosition(objectStruct objectData, glm::vec2);
+    void updateCameraPosition(glm::vec3 data);
 
   private:
     glm::mat4 projection;

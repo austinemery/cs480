@@ -66,13 +66,13 @@ Object::~Object()
   Indices.clear();
 }
 
-void Object::Update(unsigned int dt, objectStruct objectData)
+void Object::Update(unsigned int dt, objectStruct objectData, int timescale)
 {
   
   if( orbitPeriod != 0)
   {
-    angle_orbit += (((float) dt * M_PI/1000) / orbitPeriod) / 50 ;
-    angle_rot += ((((float) dt * M_PI/1000) / rotationPeriod ) * 365.25) / 50 ;
+    angle_orbit += ((((float) dt * M_PI/100) / orbitPeriod) ) * 50 / timescale ;
+    angle_rot += ((((float) dt * M_PI/100) / rotationPeriod ) * 365.25 * 50) / timescale ;
   }
   
   origin.x = 8. * distanceFromSun  * cos( angle_orbit );
