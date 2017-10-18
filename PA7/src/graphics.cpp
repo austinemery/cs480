@@ -88,6 +88,10 @@ bool Graphics::Initialize(int width, int height)
     rotation.push_back( objectVector[index].rotationPeriodHours);
     orbit.push_back( objectVector[index].orbitPeriodDays );
   }
+  normVect( fromSun );
+  normVect( diameter );
+  normVect(  rotation );
+  normVect( orbit );
 
   for( index = 0; index < numbObjects; ++index )
   {
@@ -166,7 +170,7 @@ void Graphics::Update(unsigned int dt)
 {
   // Update the object
 
-  for( index = 1; index < numbObjects; ++index )
+  for( index = 0; index < numbObjects; ++index )
   {
     objects[ index ]->Update(dt, objectVector[ index ] );
   }
@@ -353,9 +357,9 @@ void normVect( std::vector<float> &in)
 
   for( index = 0; index < in.size(); ++index )
   {
-    cout << in[ index ] << ' ';
+    //cout << in[ index ] << ' ';
     in[ index ] = in[ index ] / min;
-    cout << in[ index ] << endl;
+    //cout << in[ index ] << endl;
   }
 
 }
