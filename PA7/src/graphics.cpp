@@ -166,7 +166,7 @@ bool Graphics::Initialize(int width, int height)
   return true;
 }
 
-void Graphics::Update(unsigned int dt)
+void Graphics::Update(unsigned int dt, int objSelector, int viewingMode)
 {
   // Update the object
 
@@ -174,7 +174,8 @@ void Graphics::Update(unsigned int dt)
   {
     objects[ index ]->Update(dt, objectVector[ index ] );
   }
-  
+
+  m_camera->updateCameraPosition(objectVector[objSelector], objects[objSelector]->getOrigin());    
 }
 
 void Graphics::Render()
