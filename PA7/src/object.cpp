@@ -14,11 +14,6 @@ Object::Object(objectStruct objectData)
   angle_orbit = 0.0f;
   angle_rot = 0.0f;
 
-  orbit_rev = false;
-  rot_rev = false;
-  orbit_stop = false;
-  rot_stop = false;
-
   loadModel(objectData.objectModel, objectData.objectTexture);
 
 }
@@ -73,18 +68,22 @@ Object::~Object()
 
 void Object::Update(unsigned int dt, objectStruct objectData)
 {
-  angle_orbit += dt * M_PI/100000;
-  angle_rot += dt * M_PI/100000;
+  
+  angle_orbit += dt * M_PI/10000 * orbitPeriod;
+  angle_rot += dt * M_PI/10000 * rotationPeriod * 365.25;
+  
+  cout << angle_orbit << endl;
 
-  origin.x = distanceFromSun / 10 * cos( angle_orbit * orbitPeriod  );
-  origin.y = distanceFromSun / 10 * sin( angle_orbit * orbitPeriod  );
+  origin.x = distanceFromSun * 10  * cos( angle_orbit );
+  origin.y = distanceFromSun * 10 * sin( angle_orbit );
 
-  model = glm::scale(glm::mat4(1.0f), glm::vec3(2, 2, 2) );
+  //model = glm::scale(glm::mat4(1.0f), glm::vec3(.1, .1, .1) );
+  //cout << diameter << endl;
+  model = glm::scale(glm::mat4(1.0f), glm::vec3(1, 1, 1) );
 
   model = glm::translate(model, glm::vec3(origin.x, 0.0, origin.y));
                             
-  model = glm::rotate(model, (angle_rot * rotationPeriod), glm::vec3(0.0, 1.0, 0.0)); 
-  
+  model = glm::rotate(model, (angle_rot), glm::vec3(0.0, 1.0, 0.0)); 
   
 }
 
@@ -225,6 +224,6 @@ void Object::setPlanetVals( float a, float b, float c, float d )
 {
   distanceFromSun = a;
   diameter = b;
-  orbitPeriod = c;
-  rotationPeriod = d;
+  rotationPeriod = c;
+  orbitPeriod = d;
 }

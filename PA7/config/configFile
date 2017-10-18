@@ -1,22 +1,15 @@
 vertexShader: passthrough.vert
 fragmentShader: passthrough.frag
 
-numbObjects: 5
+numbObjects: 3
 
-objectName: Skybox
-objectModel: skybox.obj
-objectTexture: skybox.png
-distanceFromSun: 0
-diameter: 0
-rotationPeriodHours: 0
-orbitPeriodDays: 0
-moonOf: none
+
 
 objectName: Sun
 objectModel: sun.obj
 objectTexture: sun.jpg
 distanceFromSun: 0
-diameter: 1391400
+diameter: 12756
 rotationPeriodHours: 0
 orbitPeriodDays: 0
 moonOf: none
@@ -45,17 +38,9 @@ objectTexture: earth.jpg
 distanceFromSun: 149.6
 diameter: 12756
 rotationPeriodHours: 23.9
-orbitPeriodDays: 365.2
+orbitPeriodDays: 365.25
 moonOf: none
 
-objectName: Venus
-objectModel: venus.obj
-objectTexture: venus.jpg
-distanceFromSun: 149.6
-diameter: 12756
-rotationPeriodHours: 23.9
-orbitPeriodDays: 365.2
-moonOf: none
 
 objectName: Mars
 objectModel: mars.obj
@@ -90,7 +75,7 @@ objectTexture: satring.jpg
 distanceFromSun: 149.6
 diameter: 12756
 rotationPeriodHours: 23.9
-orbitPeriodDays: 365.2
+orbitPeriodDays: 365.25
 moonOf: none
 
 objectName: Uranus
