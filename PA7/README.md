@@ -1,4 +1,4 @@
-### PA6 Collaborators
+### PA7 Collaborators
 Jacob Lee
 Cayler Miley
 Austin Emery
@@ -6,10 +6,12 @@ Austin Emery
 ### The buttons
 ```bash
 
-S : Will start and stop the rotaion 
-Right Click: Will reverse and resume the rotaion
-Left Arrow Key: Will set the planet to counterclockwise rotaion
-Right Arrow Key: Will set the planet to clockwise rotation.
+V : Will change the view from top down to selection 
+C : Closer top down view
+- : Slows down simulation
++ : Speeds up simulation
+Left Arrow Key: changes planets in selection mode
+Right Arrow Key: changes planets in selection mode
 
 
 ESC : Will end the program
@@ -22,36 +24,14 @@ mkdir build
 cd build
 cmake ..
 make
-./PA6 --Help
-```
-running will help 
-```bash
-./PA6 --Help
+./PA7
 ```
 
 
-I added a bash file to make running the program with the provided shaders and models quicker. The file is called run.sh and is the root dir.
-```bash
-cp ../run.sh run.sh
-./run.sh
-```
-If I did a horrible job with that, run it like this.
-```bash
-./PA6 --v ../shaders/passthrough.vert --f ../shaders/passthrough.frag --m ../models/cube.obj
-
-```
-
-The shaders are in the shader folder
-There are some cool models in the models folder that I made that you can try
-
-Only the moon model has textures.
-
-
-# PA6: ASIMP TEXTURE LOADING
+# PA7: SOLAR SYSTEM
 
 ```bash
-The object can be changed by changing the run.sh file.
-The texture is loaded from the objects .mtl file.
+The objects and textures can be changed in the config file
 ```
 
 # Dependencies, Building, and Running
