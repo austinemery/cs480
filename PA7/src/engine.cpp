@@ -70,7 +70,6 @@ void Engine::Run()
 
     // Update the DT
     m_DT = getDT();
-    cout << m_DT << endl;
 
     // Update and render the graphics
     m_graphics->Update(m_DT, objSelector, viewingMode);
@@ -104,17 +103,17 @@ void Engine::Keyboard()
     {
       if( objSelector == 0)
       {
-        objSelector = 8;
+        objSelector = 9;
       }
       else
       {
-        objSelector = ((objSelector - 1) % 9);
+        objSelector = ((objSelector - 1) % 10);
       }
       
     }
     else if( m_event.key.keysym.sym == SDLK_RIGHT )
     {
-      objSelector = ((objSelector + 1) % 9);
+      objSelector = ((objSelector + 1) % 10);
     }
   }
 

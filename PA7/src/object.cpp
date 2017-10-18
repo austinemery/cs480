@@ -81,13 +81,22 @@ void Object::Update(unsigned int dt, objectStruct objectData, glm::vec2 orbitCen
 
   origin.x = distanceFromSun  * cos( angle_orbit );
   origin.y = distanceFromSun  * sin( angle_orbit );
+  
+  if( orbitPeriod != 0)
+  {
+    angle_orbit += (((float) dt * M_PI/1000) / orbitPeriod) / 50 ;
+    angle_rot += ((((float) dt * M_PI/1000) / rotationPeriod ) * 365.25) / 50 ;
+  }
+  
+  origin.x = 8. * distanceFromSun  * cos( angle_orbit );
+  origin.y = 8. * distanceFromSun  * sin( angle_orbit );
 
   //model = glm::scale(glm::mat4(1.0f), glm::vec3(.1, .1, .1) );
-  model = glm::scale(glm::mat4(1.0f), glm::vec3(.1, .1, .1) );
+  model = glm::scale(glm::mat4(1.0f), glm::vec3( 1,1,1) );
 
   model = glm::translate(model, glm::vec3(origin.x, 0.0, origin.y));
                             
-  //model = glm::rotate(model, (angle_rot), glm::vec3(0.0, 1.0, 0.0));
+  model = glm::rotate(model, (angle_rot), glm::vec3(0.0, 1.0, 0.0));
   
 }
 
