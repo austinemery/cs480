@@ -29,6 +29,8 @@
 
 #include <Magick++.h>
 
+#include <SDL2/SDL.h>
+
 #define INVALID_UNIFORM_LOCATION 0x7fffffff
 
 struct Vertex

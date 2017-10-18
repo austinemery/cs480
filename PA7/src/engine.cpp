@@ -44,6 +44,9 @@ bool Engine::Initialize()
     return false;
   }
 
+  objSelector = 0;
+  viewingMode = 0;
+
   // Set the time
   m_currentTimeMillis = GetCurrentTimeMillis();
 
@@ -70,7 +73,7 @@ void Engine::Run()
 
 
     // Update and render the graphics
-    m_graphics->Update(m_DT);
+    m_graphics->Update(m_DT, objSelector, viewingMode);
     m_graphics->Render();
 
     // Swap to the Window
@@ -92,24 +95,18 @@ void Engine::Keyboard()
       m_running = false;
     }
 
-    //This stops/starts the orbit of the cube
-    else if( m_event.key.keysym.sym == SDLK_a )
+    //This changes the viewing modes
+    else if( m_event.key.keysym.sym == SDLK_v )
     {
-      m_graphics->getCube()->invertOrbitStop();
-    }
-
-    //This stops/starts the rotation of the cube
-    else if( m_event.key.keysym.sym == SDLK_s )
-    {
-      m_graphics->getCube()->invertRotStop();
+      viewingMode = (viewingMode + 1) % 1;
     }
     else if( m_event.key.keysym.sym == SDLK_LEFT )
     {
-      m_graphics->getCube()->rotateLeft();
+      objSelector = ((objSelector - 1) % 10);
     }
     else if( m_event.key.keysym.sym == SDLK_RIGHT )
     {
-      m_graphics->getCube()->rotateRight();
+      objSelector = ((objSelector + 1) % 10);
     }
   }
 
@@ -128,10 +125,6 @@ void Engine::Keyboard()
       m_graphics->getCube()->invertRotRev();
     }
   }
-
-  
-  
-  
 }
 
 unsigned int Engine::getDT()
