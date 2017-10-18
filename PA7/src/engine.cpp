@@ -102,11 +102,19 @@ void Engine::Keyboard()
     }
     else if( m_event.key.keysym.sym == SDLK_LEFT )
     {
-      objSelector = ((objSelector - 1) % 10);
+      if( objSelector == 0)
+      {
+        objSelector = 8;
+      }
+      else
+      {
+        objSelector = ((objSelector - 1) % 9);
+      }
+      
     }
     else if( m_event.key.keysym.sym == SDLK_RIGHT )
     {
-      objSelector = ((objSelector + 1) % 10);
+      objSelector = ((objSelector + 1) % 9);
     }
   }
 

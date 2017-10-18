@@ -3,8 +3,6 @@ fragmentShader: passthrough.frag
 
 numbObjects: 11
 
-
-
 objectName: Sun
 objectModel: sun.obj
 objectTexture: sun.jpg
@@ -69,15 +67,6 @@ rotationPeriodHours: 10.7
 orbitPeriodDays: 10747
 moonOf: none
 
-objectName: Satring
-objectModel: satring.obj
-objectTexture: satring.jpg
-distanceFromSun: 1433.5
-diameter: 120536
-rotationPeriodHours: 10.7
-orbitPeriodDays: 10747
-moonOf: none
-
 objectName: Uranus
 objectModel: uranus.obj
 objectTexture: uranus.jpg
@@ -103,6 +92,15 @@ distanceFromSun: 5906.4
 diameter: 2370
 rotationPeriodHours: -153.3
 orbitPeriodDays: 90560
+moonOf: none
+
+objectName: Satring
+objectModel: satring.obj
+objectTexture: satring.jpg
+distanceFromSun: 1433.5
+diameter: 120536
+rotationPeriodHours: 10.7
+orbitPeriodDays: 10747
 moonOf: none
 
 objectName: Moon
