@@ -21,6 +21,24 @@ rotationPeriodHours: 0
 orbitPeriodDays: 0
 moonOf: none
 
+objectName: Mercury
+objectModel: mercury.obj
+objectTexture: mercury.jpg
+distanceFromSun: 57.9
+diameter: 4879
+rotationPeriodHours: 1407.6
+orbitPeriodDays: 88.0
+moonOf: none
+
+objectName: Venus
+objectModel: venus.obj
+objectTexture: venus.jpg
+distanceFromSun: 108.2
+diameter: 12104
+rotationPeriodHours: -5832.5
+orbitPeriodDays: 224.7
+moonOf: none
+
 objectName: Earth
 objectModel: earth.obj
 objectTexture: earth.jpg
@@ -39,6 +57,33 @@ rotationPeriodHours: 23.9
 orbitPeriodDays: 365.2
 moonOf: none
 
+objectName: Mars
+objectModel: mars.obj
+objectTexture: mars.jpg
+distanceFromSun: 227.9
+diameter: 6792
+rotationPeriodHours: 24.6
+orbitPeriodDays: 687
+moonOf: none
+
+objectName: Jupiter
+objectModel: jupiter.obj
+objectTexture: jupiter.jpg
+distanceFromSun: 778.6
+diameter: 142984
+rotationPeriodHours: 9.9
+orbitPeriodDays: 4331
+moonOf: none
+
+objectName: Saturn
+objectModel: saturn.obj
+objectTexture: saturn.jpg
+distanceFromSun: 1433.5
+diameter: 120536
+rotationPeriodHours: 10.7
+orbitPeriodDays: 10747
+moonOf: none
+
 objectName: Satring
 objectModel: satring.obj
 objectTexture: satring.jpg
@@ -48,3 +93,29 @@ rotationPeriodHours: 23.9
 orbitPeriodDays: 365.2
 moonOf: none
 
+objectName: Uranus
+objectModel: uranus.obj
+objectTexture: uranus.jpg
+distanceFromSun: 2872.5
+diameter: 51118
+rotationPeriodHours: -17.2
+orbitPeriodDays: 30589
+moonOf: none
+
+objectName: Neptune
+objectModel: neptune.obj
+objectTexture: neptune.jpg
+distanceFromSun: 4495.1
+diameter: 49528
+rotationPeriodHours: 16.1
+orbitPeriodDays: 59800
+moonOf: none
+
+objectName: Pluto
+objectModel: pluto.obj
+objectTexture: pluto.jpg
+distanceFromSun: 5906.4
+diameter: 2370
+rotationPeriodHours: -153.3
+orbitPeriodDays: 90560
+moonOf: none
