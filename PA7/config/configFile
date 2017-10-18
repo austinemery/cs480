@@ -7,7 +7,7 @@ objectName: Sun
 objectModel: sun.obj
 objectTexture: sun.jpg
 distanceFromSun: 0
-diameter: 1391400
+diameter: 14070
 rotationPeriodHours: 0
 orbitPeriodDays: 0
 moonOf: none

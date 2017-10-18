@@ -72,14 +72,14 @@ void Object::Update(unsigned int dt, objectStruct objectData)
   if( orbitPeriod != 0)
   {
     angle_orbit += (((float) dt * M_PI/1000) / orbitPeriod) / 50 ;
-    angle_rot += (((float) dt * M_PI/1000) / rotationPeriod * 365.25) / 50 ;
+    angle_rot += ((((float) dt * M_PI/1000) / rotationPeriod ) * 365.25) / 50 ;
   }
   
-  origin.x = distanceFromSun * 1000000 * cos( angle_orbit );
-  origin.y = distanceFromSun * 1000000 * sin( angle_orbit );
+  origin.x = 8. * distanceFromSun  * cos( angle_orbit );
+  origin.y = 8. * distanceFromSun  * sin( angle_orbit );
 
   //model = glm::scale(glm::mat4(1.0f), glm::vec3(.1, .1, .1) );
-  model = glm::scale(glm::mat4(1.0f), glm::vec3( diameter, diameter, diameter) );
+  model = glm::scale(glm::mat4(1.0f), glm::vec3( 1,1,1) );
 
   model = glm::translate(model, glm::vec3(origin.x, 0.0, origin.y));
                             

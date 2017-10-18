@@ -83,11 +83,12 @@ bool Graphics::Initialize(int width, int height)
 
   for( index = 0; index < numbObjects; ++index )
   {
-    fromSun.push_back( objectVector[index].distanceFromSun);
-    diameter.push_back( objectVector[index].diameter);
-    rotation.push_back( objectVector[index].rotationPeriodHours);
+    fromSun.push_back( objectVector[index].distanceFromSun );
+    diameter.push_back( objectVector[index].diameter );
+    rotation.push_back( objectVector[index].rotationPeriodHours );
     orbit.push_back( objectVector[index].orbitPeriodDays );
   }
+
   normVect( fromSun );
   normVect( diameter );
   normVect(  rotation );
