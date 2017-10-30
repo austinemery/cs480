@@ -24,3 +24,9 @@ See PA4 README.md for more details
 
 ## PA5
 Assimp model loading... PA5 is in JacobNLee's repo
+
+## PA7
+Solar System... PA7 is in JacobNLee's repo
+
+## PA8
+Bullet Physics

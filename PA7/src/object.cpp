@@ -93,7 +93,7 @@ void Object::Update(unsigned int dt, objectStruct objectData, glm::vec2 orbitCen
   //model = glm::scale(glm::mat4(1.0f), glm::vec3(.1, .1, .1) );
 
   model = glm::translate(glm::mat4(1.0f), glm::vec3(origin.x, 0.0, origin.y));
-  model = glm::scale(model, glm::vec3(  diameter, diameter , diameter) );                                                     
+  model = glm::scale(model, glm::vec3(  diameter * 2, diameter * 2, diameter * 2) );                                                     
   model = glm::rotate(model, (angle_rot), glm::vec3(0.0, 1.0, 0.0));
   
 }

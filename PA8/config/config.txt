@@ -1,0 +1,3 @@
+objName earth
+objFileName earth.obj
+objTextureName earth.jpg
