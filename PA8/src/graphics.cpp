@@ -53,7 +53,7 @@ bool Graphics::Initialize(int width, int height)
   }
 
   //The ground plane
-  btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
+  btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 0, 0), 1);
   m_physics->addGroundPlane(groundShape);
 
   // Create the objects
@@ -154,8 +154,13 @@ bool Graphics::Initialize(int width, int height)
 
 void Graphics::Update(unsigned int dt, float p_rotationDir, float p_orbitDir, float m_rotationDir, float m_orbitDir)
 {
+  glm::mat4 temp;
+
+  //Update the physics
+  temp = m_physics->Update(dt);
+
   // Update the object
-  planet_1->Update(dt, p_rotationDir, p_orbitDir, m_rotationDir, m_orbitDir, m_physics->Update(dt));
+  planet_1->Update(dt, p_rotationDir, p_orbitDir, m_rotationDir, m_orbitDir, temp);
   //moon_1->copyPlanetValues(planet_1);
   //moon_1->Update(dt, p_rotationDir, p_orbitDir, m_rotationDir, m_orbitDir);
 }

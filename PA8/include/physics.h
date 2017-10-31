@@ -23,6 +23,8 @@ class Physics
     btSequentialImpulseConstraintSolver* solver;
     btDiscreteDynamicsWorld* dynamicsWorld;
 
+    btTransform trans;
+
     btRigidBody* groundRigidBody;
     btRigidBody* fallRigidBody;
 
