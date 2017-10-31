@@ -41,8 +41,7 @@ bool Physics::Initialize()
 glm::mat4 Physics::Update(unsigned int dt)
 {
   btScalar m[16];
-  std::cout << std::endl << "Before: " << dynamicsWorld << std::endl;
-  dynamicsWorld->stepSimulation(dt, 10);
+  dynamicsWorld->stepSimulation(dt, 1);
   fallRigidBody->getMotionState()->getWorldTransform(trans);
   trans.getOpenGLMatrix(m);
 
@@ -53,7 +52,7 @@ glm::mat4 Physics::Update(unsigned int dt)
 
 void Physics::addGroundPlane(btCollisionShape* groundShape)
 {
-  btDefaultMotionState* groundMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 0, 0)));
+  btDefaultMotionState* groundMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, -1, 0)));
   btRigidBody::btRigidBodyConstructionInfo groundRigidBodyCI(0, groundMotionState, groundShape, btVector3(0, 0, 0));
   groundRigidBody = new btRigidBody(groundRigidBodyCI);
   dynamicsWorld->addRigidBody(groundRigidBody);

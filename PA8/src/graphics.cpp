@@ -53,18 +53,19 @@ bool Graphics::Initialize(int width, int height)
   }
 
   //The ground plane
-  btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 0, 0), 1);
+  btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
   m_physics->addGroundPlane(groundShape);
 
   // Create the objects
   btTriangleMesh* objTriMesh = new btTriangleMesh();
   planet_1 = new Object("earth", objTriMesh);
-  btCollisionShape *shape = new btBvhTriangleMeshShape(objTriMesh, true); 
+  //btCollisionShape *shape = new btBvhTriangleMeshShape(objTriMesh, true);
+  btCollisionShape *shape = new btSphereShape(1); 
   //moon_1 = new Object("Earth");
   //moon_1->changeToMoon();
 
   //Adding Sphere to physics world
-  btDefaultMotionState* fallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 50, 0)));
+  btDefaultMotionState* fallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 10, 0)));
 
   m_physics->addObject(shape, fallMotionState);
 
