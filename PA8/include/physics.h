@@ -2,6 +2,7 @@
 #define PHYSICS_H
 
 #include <iostream>
+#include <vector>
 
 #include "graphics_headers.h"
 
@@ -11,7 +12,7 @@ class Physics
     Physics();
     ~Physics();
     bool Initialize();
-    glm::mat4 Update(unsigned int);
+    glm::mat4 Update(unsigned int, int);
 
     void addGroundPlane(btCollisionShape*);
     void addObject(btCollisionShape*, btDefaultMotionState*);
@@ -26,7 +27,7 @@ class Physics
     btTransform trans;
 
     btRigidBody* groundRigidBody;
-    btRigidBody* fallRigidBody;
+    std::vector<btRigidBody*> physicsObjectVector;
 
 };
 

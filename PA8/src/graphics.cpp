@@ -60,14 +60,18 @@ bool Graphics::Initialize(int width, int height)
   btTriangleMesh* objTriMesh = new btTriangleMesh();
   planet_1 = new Object("earth", objTriMesh);
   //btCollisionShape *shape = new btBvhTriangleMeshShape(objTriMesh, true);
-  btCollisionShape *shape = new btSphereShape(1); 
-  //moon_1 = new Object("Earth");
-  //moon_1->changeToMoon();
+  btCollisionShape *shape = new btSphereShape(1);  
 
   //Adding Sphere to physics world
-  btDefaultMotionState* fallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 10, 0)));
+  btDefaultMotionState* ballMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 10, 0)));
 
-  m_physics->addObject(shape, fallMotionState);
+  m_physics->addObject(shape, ballMotionState);
+
+  //Second Object
+  moon_1 = new Object("earth", objTriMesh);
+  btDefaultMotionState* secondBallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(1, 15, 0)));
+
+  m_physics->addObject(shape, secondBallMotionState);
 
   // Set up the shaders
   m_shader = new Shader();
@@ -158,12 +162,13 @@ void Graphics::Update(unsigned int dt, float p_rotationDir, float p_orbitDir, fl
   glm::mat4 temp;
 
   //Update the physics
-  temp = m_physics->Update(dt);
 
-  // Update the object
+  //update the sphere
+  temp = m_physics->Update(dt, 0);
   planet_1->Update(dt, p_rotationDir, p_orbitDir, m_rotationDir, m_orbitDir, temp);
-  //moon_1->copyPlanetValues(planet_1);
-  //moon_1->Update(dt, p_rotationDir, p_orbitDir, m_rotationDir, m_orbitDir);
+  
+  temp = m_physics->Update(dt, 1);
+  moon_1->Update(dt, p_rotationDir, p_orbitDir, m_rotationDir, m_orbitDir, temp);
 }
 
 void Graphics::Render()
@@ -188,8 +193,8 @@ void Graphics::Render()
   glUniformMatrix4fv(p_modelMatrix, 1, GL_FALSE, glm::value_ptr(planet_1->GetModel()));
   planet_1->Render();
 
-  //glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(moon_1->GetModel()));
-  //moon_1->Render();
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(moon_1->GetModel()));
+  moon_1->Render();
 
   // Get any errors from OpenGL
   auto error = glGetError();

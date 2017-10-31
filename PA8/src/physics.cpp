@@ -7,9 +7,9 @@ Physics::Physics()
 
 Physics::~Physics()
 {
-  dynamicsWorld->removeRigidBody(fallRigidBody);
-  delete fallRigidBody->getMotionState();
-  delete fallRigidBody;
+  dynamicsWorld->removeRigidBody(physicsObjectVector[0]);
+  delete physicsObjectVector[0]->getMotionState();
+  delete physicsObjectVector[0];
 
   dynamicsWorld->removeRigidBody(groundRigidBody);
   delete groundRigidBody->getMotionState();
@@ -38,11 +38,11 @@ bool Physics::Initialize()
    return true;
 }
 
-glm::mat4 Physics::Update(unsigned int dt)
+glm::mat4 Physics::Update(unsigned int dt, int index)
 {
   btScalar m[16];
   dynamicsWorld->stepSimulation(dt, 1);
-  fallRigidBody->getMotionState()->getWorldTransform(trans);
+  physicsObjectVector[index]->getMotionState()->getWorldTransform(trans);
   trans.getOpenGLMatrix(m);
 
   std::cout << "sphere height: " << trans.getOrigin().getY() << std::endl;
@@ -64,6 +64,8 @@ void Physics::addObject(btCollisionShape* shape, btDefaultMotionState* motionSta
   btVector3 fallInertia(0, 0, 0);
   shape->calculateLocalInertia(mass, fallInertia);
   btRigidBody::btRigidBodyConstructionInfo fallRigidBodyCI(mass, motionState, shape, fallInertia);
-  fallRigidBody = new btRigidBody(fallRigidBodyCI);
-  dynamicsWorld->addRigidBody(fallRigidBody);
+  btRigidBody* tempBody = new btRigidBody(fallRigidBodyCI);
+  physicsObjectVector.push_back(tempBody);
+  dynamicsWorld->addRigidBody(physicsObjectVector.back());
+  //delete tempBody;
 }
