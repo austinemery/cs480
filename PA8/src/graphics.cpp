@@ -52,17 +52,17 @@ bool Graphics::Initialize(int width, int height)
     return false;
   }
 
+  btTriangleMesh* objTriMesh = new btTriangleMesh();
+
   //The ground plane
+  ground_1 = new Object("plane", objTriMesh);
   btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 0);
   m_physics->addGroundPlane(groundShape);
 
   // Create the objects
-  btTriangleMesh* objTriMesh = new btTriangleMesh();
   planet_1 = new Object("earth", objTriMesh);
   //btCollisionShape *sphereShape = new btBvhTriangleMeshShape(objTriMesh, true);
   btCollisionShape *sphereShape = new btSphereShape(1);  
-
-  //Adding Sphere to physics world
   btDefaultMotionState* ballMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 10, 0)));
   m_physics->addObject(sphereShape, ballMotionState, 1);
 
@@ -203,12 +203,12 @@ void Graphics::Render()
   glUniformMatrix4fv(m_viewMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetView())); 
 
 /////////////////////////////////////////////////////////////////////////
-  glUniformMatrix4fv(p_projectionMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetProjection())); 
-  glUniformMatrix4fv(p_viewMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetView())); 
-/////////////////////////////////////////////////////////////////////////////
 
-  // Render the object
-  glUniformMatrix4fv(p_modelMatrix, 1, GL_FALSE, glm::value_ptr(planet_1->GetModel()));
+  // Render the objects
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(ground_1->GetModel()));
+  ground_1->Render();
+
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(planet_1->GetModel()));
   planet_1->Render();
 
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(moon_1->GetModel()));

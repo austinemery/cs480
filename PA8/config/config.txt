@@ -9,3 +9,7 @@ objTextureName white.jpg
 objName cylinder
 objFileName cylinder.obj
 objTextureName white.jpg
+
+objName plane
+objFileName plane.obj
+objTextureName grey.jpg

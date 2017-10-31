@@ -37,11 +37,10 @@ void Object::Render()
 
   //Assimp Stuff
 
-  Magick::Image image;
-  Magick::Blob blob;
 
-  image.read(textureName);
-  image.write(&blob, "RGBA");
+  std::cout << "Object: " << modelName << std::endl;
+
+  std::cout << "Testure: " << textureName << std::endl;
 
   //cout << image.columns() << endl;
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.columns(), image.rows(), 0, GL_RGBA, GL_UNSIGNED_BYTE, blob.data() );
@@ -72,6 +71,7 @@ void Object::configRead(std::string objectName)
 				configFile >> tempString;
 				if (tempString == objectName)
 				{
+					std::cout << tempString << std::endl;
 					configFile >> tempString;
 					if (tempString == "objFileName")
 					{
@@ -79,6 +79,7 @@ void Object::configRead(std::string objectName)
 						tempModelName.append(tempString);
 						modelName = tempModelName;
 					}
+					std::cout << tempString << std::endl;
 					configFile >> tempString;
 					if (tempString == "objTextureName")
 					{
@@ -86,6 +87,7 @@ void Object::configRead(std::string objectName)
 						tempTextureName.append(tempString);
 						textureName = tempTextureName;
 					}
+					std::cout << tempString << std::endl;
 				}
 			}
 		}
@@ -129,7 +131,7 @@ void Object::loadModel(btTriangleMesh* objTriMesh)
     }
     objTriMesh->addTriangle(triArray[0], triArray[1], triArray[2]);
   }
-  
+
   glGenBuffers(1, &VB);
   glBindBuffer(GL_ARRAY_BUFFER, VB);
   glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
@@ -141,6 +143,9 @@ void Object::loadModel(btTriangleMesh* objTriMesh)
   glGenTextures(1, &aTexture);
   glActiveTexture( GL_TEXTURE0 );
   glBindTexture( GL_TEXTURE_2D, aTexture ); 
+
+  image.read(textureName);
+  image.write(&blob, "RGBA");
 }
 
 void Object::copyPlanetValues(Object* originObj)

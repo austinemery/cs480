@@ -41,7 +41,7 @@ bool Physics::Initialize()
 glm::mat4 Physics::Update(unsigned int dt, int index)
 {
   btScalar m[16];
-  dynamicsWorld->stepSimulation(dt, 1);
+  dynamicsWorld->stepSimulation(dt/10, 1);
   physicsObjectVector[index]->getMotionState()->getWorldTransform(trans);
   trans.getOpenGLMatrix(m);
 

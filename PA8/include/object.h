@@ -39,6 +39,9 @@ class Object
 
     std::string textureName;
     std::string modelName;
+
+    Magick::Image image;
+    Magick::Blob blob;
 };
 
 #endif /* OBJECT_H */
