@@ -67,7 +67,7 @@ void Engine::Run()
     m_DT = getDT();
 
     // Update and render the graphics
-    m_graphics->Update(m_DT, p_tempRotation, p_tempOrbit, m_tempRotation, m_tempOrbit);
+    m_graphics->Update(m_DT);
     m_graphics->Render();
 
     // Swap to the Window

@@ -16,7 +16,7 @@ class Graphics
     Graphics();
     ~Graphics();
     bool Initialize(int width, int height);
-    void Update(unsigned int dt, float , float, float, float);
+    void Update(unsigned int dt);
     void Render();
 
   private:
@@ -36,6 +36,8 @@ class Graphics
 
     Object *planet_1;
     Object *moon_1;
+    Object *cube_1;
+    Object *cylinder_1;
 };
 
 #endif /* GRAPHICS_H */

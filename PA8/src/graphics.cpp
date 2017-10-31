@@ -53,25 +53,35 @@ bool Graphics::Initialize(int width, int height)
   }
 
   //The ground plane
-  btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 1);
+  btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 0);
   m_physics->addGroundPlane(groundShape);
 
   // Create the objects
   btTriangleMesh* objTriMesh = new btTriangleMesh();
   planet_1 = new Object("earth", objTriMesh);
-  //btCollisionShape *shape = new btBvhTriangleMeshShape(objTriMesh, true);
-  btCollisionShape *shape = new btSphereShape(1);  
+  //btCollisionShape *sphereShape = new btBvhTriangleMeshShape(objTriMesh, true);
+  btCollisionShape *sphereShape = new btSphereShape(1);  
 
   //Adding Sphere to physics world
   btDefaultMotionState* ballMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 10, 0)));
-
-  m_physics->addObject(shape, ballMotionState);
+  m_physics->addObject(sphereShape, ballMotionState, 1);
 
   //Second Object
   moon_1 = new Object("earth", objTriMesh);
   btDefaultMotionState* secondBallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(1, 15, 0)));
+  m_physics->addObject(sphereShape, secondBallMotionState, 1);
 
-  m_physics->addObject(shape, secondBallMotionState);
+  //Add the Cube
+  cube_1 = new Object("cube", objTriMesh);
+  btCollisionShape *cubeShape = new btBoxShape(btVector3(1, 1, 1));
+  btDefaultMotionState *cubeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(-1, 1, 0)));
+  m_physics->addObject(cubeShape, cubeMotionState, 1);
+
+  //Add the cylinder
+  cylinder_1 = new Object("cylinder", objTriMesh);
+  btCollisionShape *cylinderShape = new btCylinderShape(btVector3(1, 1, 1));
+  btDefaultMotionState *cylinderMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(5, 1, 0)));
+  m_physics->addObject(cylinderShape, cylinderMotionState, 0);
 
   // Set up the shaders
   m_shader = new Shader();
@@ -157,24 +167,32 @@ bool Graphics::Initialize(int width, int height)
   return true;
 }
 
-void Graphics::Update(unsigned int dt, float p_rotationDir, float p_orbitDir, float m_rotationDir, float m_orbitDir)
+void Graphics::Update(unsigned int dt)
 {
   glm::mat4 temp;
 
   //Update the physics
 
-  //update the sphere
+  //update the spheres
   temp = m_physics->Update(dt, 0);
-  planet_1->Update(dt, p_rotationDir, p_orbitDir, m_rotationDir, m_orbitDir, temp);
+  planet_1->Update(dt, temp);
   
   temp = m_physics->Update(dt, 1);
-  moon_1->Update(dt, p_rotationDir, p_orbitDir, m_rotationDir, m_orbitDir, temp);
+  moon_1->Update(dt, temp);
+
+  //update the cube
+  temp = m_physics->Update(dt, 2);
+  cube_1->Update(dt, temp);
+
+  //update the cylinder
+  temp = m_physics->Update(dt, 3);
+  cylinder_1->Update(dt, temp);
 }
 
 void Graphics::Render()
 {
   //clear the screen
-  glClearColor(0.0, 0.0, 0.2, 1.0);
+  glClearColor(0.0, 0.0, 0.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   // Start the correct program
@@ -195,6 +213,12 @@ void Graphics::Render()
 
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(moon_1->GetModel()));
   moon_1->Render();
+
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(cube_1->GetModel()));
+  cube_1->Render();
+
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(cylinder_1->GetModel()));
+  cylinder_1->Render();
 
   // Get any errors from OpenGL
   auto error = glGetError();

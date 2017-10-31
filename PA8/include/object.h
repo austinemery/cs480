@@ -11,7 +11,7 @@ class Object
   public:
     Object(std::string, btTriangleMesh*);
     ~Object();
-    void Update(unsigned int dt, float, float, float, float, glm::mat4);
+    void Update(unsigned int dt, glm::mat4);
     void Render();
     void configRead(std::string);
     void copyPlanetValues(Object*);

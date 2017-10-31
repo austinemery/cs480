@@ -15,7 +15,7 @@ class Physics
     glm::mat4 Update(unsigned int, int);
 
     void addGroundPlane(btCollisionShape*);
-    void addObject(btCollisionShape*, btDefaultMotionState*);
+    void addObject(btCollisionShape*, btDefaultMotionState*, int);
 
   private:
     btBroadphaseInterface* broadphase;

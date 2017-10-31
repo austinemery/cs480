@@ -12,35 +12,8 @@ Object::~Object()
   Indices.clear();
 }
 
-void Object::Update(unsigned int dt, float p_rotationDir, float p_orbitDir, float m_rotationDir, float m_orbitDir, glm::mat4 m)
+void Object::Update(unsigned int dt, glm::mat4 m)
 {
-	if (p_orbitDir != 0)
-	{
-	  if (p_orbitDir == 1)
-	  {
-	    p_orbitValue += dt * M_PI/2000;
-	  }
-	  else
-	  {
-	    p_orbitValue -= dt * M_PI/2000;
-	  }
-	}
-
-	if (p_rotationDir != 0)
-	{
-	  if (p_rotationDir == 1)
-	  {
-	    p_rotationValue += dt * M_PI/2000;
-	  }
-	  else
-	  {
-	    p_rotationValue -= dt * M_PI/2000;
-	  }
-	}
-
-  //std::cout << "Orbit: " << orbitValue << " Rotate: " << rotationValue << std::endl;
-  glm::mat4 p_rotateMatrix = glm::rotate(glm::mat4(1.0f), (p_rotationValue), glm::vec3(0.0, 1.0, 0.0));
-
   model = m;
 }
 
@@ -154,7 +127,7 @@ void Object::loadModel(btTriangleMesh* objTriMesh)
     	triArray[jindex] = btVector3(position.x, position.y, position.z);
     	Indices.push_back( face.mIndices[jindex] );
     }
-    objTriMesh->addTriangle(triArray[0], triArray[2], triArray[3]);
+    objTriMesh->addTriangle(triArray[0], triArray[1], triArray[2]);
   }
   
   glGenBuffers(1, &VB);
