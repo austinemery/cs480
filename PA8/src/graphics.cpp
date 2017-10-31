@@ -113,6 +113,7 @@ bool Graphics::Initialize(int width, int height)
   }
 
   // Locate the projection matrix in the shader
+  
   m_projectionMatrix = m_shader->GetUniformLocation("projectionMatrix");
   if (m_projectionMatrix == INVALID_UNIFORM_LOCATION) 
   {
@@ -135,8 +136,10 @@ bool Graphics::Initialize(int width, int height)
     printf("m_modelMatrix not found\n");
     return false;
   }
+
 ////////////////////////////////////////////////////////////////////////////////
   // Locate the projection matrix in the shader
+  /*
   p_projectionMatrix = m_shader->GetUniformLocation("projectionMatrix");
   if (p_projectionMatrix == INVALID_UNIFORM_LOCATION) 
   {
@@ -159,6 +162,7 @@ bool Graphics::Initialize(int width, int height)
     printf("p_modelMatrix not found\n");
     return false;
   }
+  */
 //////////////////////////////////////////////////////////////////////////////////
   //enable depth testing
   glEnable(GL_DEPTH_TEST);

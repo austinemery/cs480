@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/austin/workspace/cs480Emery/PA8
+CMAKE_SOURCE_DIR = /home/jake/cs480Emery/PA8
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/austin/workspace/cs480Emery/PA8/build
+CMAKE_BINARY_DIR = /home/jake/cs480Emery/PA8/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PA8.dir/depend.make
@@ -57,66 +57,66 @@ include CMakeFiles/PA8.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PA8.dir/flags.make
 
-CMakeFiles/PA8.dir/src/main.cpp.o: CMakeFiles/PA8.dir/flags.make
-CMakeFiles/PA8.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PA8.dir/src/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/main.cpp.o -c /home/austin/workspace/cs480Emery/PA8/src/main.cpp
+CMakeFiles/PA8.dir/src/camera.cpp.o: CMakeFiles/PA8.dir/flags.make
+CMakeFiles/PA8.dir/src/camera.cpp.o: ../src/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PA8.dir/src/camera.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/camera.cpp.o -c /home/jake/cs480Emery/PA8/src/camera.cpp
 
-CMakeFiles/PA8.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/austin/workspace/cs480Emery/PA8/src/main.cpp > CMakeFiles/PA8.dir/src/main.cpp.i
+CMakeFiles/PA8.dir/src/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/camera.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jake/cs480Emery/PA8/src/camera.cpp > CMakeFiles/PA8.dir/src/camera.cpp.i
 
-CMakeFiles/PA8.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/austin/workspace/cs480Emery/PA8/src/main.cpp -o CMakeFiles/PA8.dir/src/main.cpp.s
+CMakeFiles/PA8.dir/src/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/camera.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jake/cs480Emery/PA8/src/camera.cpp -o CMakeFiles/PA8.dir/src/camera.cpp.s
 
-CMakeFiles/PA8.dir/src/main.cpp.o.requires:
+CMakeFiles/PA8.dir/src/camera.cpp.o.requires:
 
-.PHONY : CMakeFiles/PA8.dir/src/main.cpp.o.requires
+.PHONY : CMakeFiles/PA8.dir/src/camera.cpp.o.requires
 
-CMakeFiles/PA8.dir/src/main.cpp.o.provides: CMakeFiles/PA8.dir/src/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/PA8.dir/build.make CMakeFiles/PA8.dir/src/main.cpp.o.provides.build
-.PHONY : CMakeFiles/PA8.dir/src/main.cpp.o.provides
+CMakeFiles/PA8.dir/src/camera.cpp.o.provides: CMakeFiles/PA8.dir/src/camera.cpp.o.requires
+	$(MAKE) -f CMakeFiles/PA8.dir/build.make CMakeFiles/PA8.dir/src/camera.cpp.o.provides.build
+.PHONY : CMakeFiles/PA8.dir/src/camera.cpp.o.provides
 
-CMakeFiles/PA8.dir/src/main.cpp.o.provides.build: CMakeFiles/PA8.dir/src/main.cpp.o
+CMakeFiles/PA8.dir/src/camera.cpp.o.provides.build: CMakeFiles/PA8.dir/src/camera.cpp.o
 
 
-CMakeFiles/PA8.dir/src/engine.cpp.o: CMakeFiles/PA8.dir/flags.make
-CMakeFiles/PA8.dir/src/engine.cpp.o: ../src/engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PA8.dir/src/engine.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/engine.cpp.o -c /home/austin/workspace/cs480Emery/PA8/src/engine.cpp
+CMakeFiles/PA8.dir/src/graphics.cpp.o: CMakeFiles/PA8.dir/flags.make
+CMakeFiles/PA8.dir/src/graphics.cpp.o: ../src/graphics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PA8.dir/src/graphics.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/graphics.cpp.o -c /home/jake/cs480Emery/PA8/src/graphics.cpp
 
-CMakeFiles/PA8.dir/src/engine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/engine.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/austin/workspace/cs480Emery/PA8/src/engine.cpp > CMakeFiles/PA8.dir/src/engine.cpp.i
+CMakeFiles/PA8.dir/src/graphics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/graphics.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jake/cs480Emery/PA8/src/graphics.cpp > CMakeFiles/PA8.dir/src/graphics.cpp.i
 
-CMakeFiles/PA8.dir/src/engine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/engine.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/austin/workspace/cs480Emery/PA8/src/engine.cpp -o CMakeFiles/PA8.dir/src/engine.cpp.s
+CMakeFiles/PA8.dir/src/graphics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/graphics.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jake/cs480Emery/PA8/src/graphics.cpp -o CMakeFiles/PA8.dir/src/graphics.cpp.s
 
-CMakeFiles/PA8.dir/src/engine.cpp.o.requires:
+CMakeFiles/PA8.dir/src/graphics.cpp.o.requires:
 
-.PHONY : CMakeFiles/PA8.dir/src/engine.cpp.o.requires
+.PHONY : CMakeFiles/PA8.dir/src/graphics.cpp.o.requires
 
-CMakeFiles/PA8.dir/src/engine.cpp.o.provides: CMakeFiles/PA8.dir/src/engine.cpp.o.requires
-	$(MAKE) -f CMakeFiles/PA8.dir/build.make CMakeFiles/PA8.dir/src/engine.cpp.o.provides.build
-.PHONY : CMakeFiles/PA8.dir/src/engine.cpp.o.provides
+CMakeFiles/PA8.dir/src/graphics.cpp.o.provides: CMakeFiles/PA8.dir/src/graphics.cpp.o.requires
+	$(MAKE) -f CMakeFiles/PA8.dir/build.make CMakeFiles/PA8.dir/src/graphics.cpp.o.provides.build
+.PHONY : CMakeFiles/PA8.dir/src/graphics.cpp.o.provides
 
-CMakeFiles/PA8.dir/src/engine.cpp.o.provides.build: CMakeFiles/PA8.dir/src/engine.cpp.o
+CMakeFiles/PA8.dir/src/graphics.cpp.o.provides.build: CMakeFiles/PA8.dir/src/graphics.cpp.o
 
 
 CMakeFiles/PA8.dir/src/object.cpp.o: CMakeFiles/PA8.dir/flags.make
 CMakeFiles/PA8.dir/src/object.cpp.o: ../src/object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PA8.dir/src/object.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/object.cpp.o -c /home/austin/workspace/cs480Emery/PA8/src/object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PA8.dir/src/object.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/object.cpp.o -c /home/jake/cs480Emery/PA8/src/object.cpp
 
 CMakeFiles/PA8.dir/src/object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/object.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/austin/workspace/cs480Emery/PA8/src/object.cpp > CMakeFiles/PA8.dir/src/object.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jake/cs480Emery/PA8/src/object.cpp > CMakeFiles/PA8.dir/src/object.cpp.i
 
 CMakeFiles/PA8.dir/src/object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/object.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/austin/workspace/cs480Emery/PA8/src/object.cpp -o CMakeFiles/PA8.dir/src/object.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jake/cs480Emery/PA8/src/object.cpp -o CMakeFiles/PA8.dir/src/object.cpp.s
 
 CMakeFiles/PA8.dir/src/object.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/PA8.dir/src/object.cpp.o.provides.build: CMakeFiles/PA8.dir/src/objec
 
 CMakeFiles/PA8.dir/src/window.cpp.o: CMakeFiles/PA8.dir/flags.make
 CMakeFiles/PA8.dir/src/window.cpp.o: ../src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PA8.dir/src/window.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/window.cpp.o -c /home/austin/workspace/cs480Emery/PA8/src/window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PA8.dir/src/window.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/window.cpp.o -c /home/jake/cs480Emery/PA8/src/window.cpp
 
 CMakeFiles/PA8.dir/src/window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/window.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/austin/workspace/cs480Emery/PA8/src/window.cpp > CMakeFiles/PA8.dir/src/window.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jake/cs480Emery/PA8/src/window.cpp > CMakeFiles/PA8.dir/src/window.cpp.i
 
 CMakeFiles/PA8.dir/src/window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/window.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/austin/workspace/cs480Emery/PA8/src/window.cpp -o CMakeFiles/PA8.dir/src/window.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jake/cs480Emery/PA8/src/window.cpp -o CMakeFiles/PA8.dir/src/window.cpp.s
 
 CMakeFiles/PA8.dir/src/window.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/PA8.dir/src/window.cpp.o.provides.build: CMakeFiles/PA8.dir/src/windo
 
 CMakeFiles/PA8.dir/src/physics.cpp.o: CMakeFiles/PA8.dir/flags.make
 CMakeFiles/PA8.dir/src/physics.cpp.o: ../src/physics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PA8.dir/src/physics.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/physics.cpp.o -c /home/austin/workspace/cs480Emery/PA8/src/physics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PA8.dir/src/physics.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/physics.cpp.o -c /home/jake/cs480Emery/PA8/src/physics.cpp
 
 CMakeFiles/PA8.dir/src/physics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/physics.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/austin/workspace/cs480Emery/PA8/src/physics.cpp > CMakeFiles/PA8.dir/src/physics.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jake/cs480Emery/PA8/src/physics.cpp > CMakeFiles/PA8.dir/src/physics.cpp.i
 
 CMakeFiles/PA8.dir/src/physics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/physics.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/austin/workspace/cs480Emery/PA8/src/physics.cpp -o CMakeFiles/PA8.dir/src/physics.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jake/cs480Emery/PA8/src/physics.cpp -o CMakeFiles/PA8.dir/src/physics.cpp.s
 
 CMakeFiles/PA8.dir/src/physics.cpp.o.requires:
 
@@ -177,42 +177,42 @@ CMakeFiles/PA8.dir/src/physics.cpp.o.provides: CMakeFiles/PA8.dir/src/physics.cp
 CMakeFiles/PA8.dir/src/physics.cpp.o.provides.build: CMakeFiles/PA8.dir/src/physics.cpp.o
 
 
-CMakeFiles/PA8.dir/src/camera.cpp.o: CMakeFiles/PA8.dir/flags.make
-CMakeFiles/PA8.dir/src/camera.cpp.o: ../src/camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PA8.dir/src/camera.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/camera.cpp.o -c /home/austin/workspace/cs480Emery/PA8/src/camera.cpp
+CMakeFiles/PA8.dir/src/engine.cpp.o: CMakeFiles/PA8.dir/flags.make
+CMakeFiles/PA8.dir/src/engine.cpp.o: ../src/engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PA8.dir/src/engine.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/engine.cpp.o -c /home/jake/cs480Emery/PA8/src/engine.cpp
 
-CMakeFiles/PA8.dir/src/camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/camera.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/austin/workspace/cs480Emery/PA8/src/camera.cpp > CMakeFiles/PA8.dir/src/camera.cpp.i
+CMakeFiles/PA8.dir/src/engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/engine.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jake/cs480Emery/PA8/src/engine.cpp > CMakeFiles/PA8.dir/src/engine.cpp.i
 
-CMakeFiles/PA8.dir/src/camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/camera.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/austin/workspace/cs480Emery/PA8/src/camera.cpp -o CMakeFiles/PA8.dir/src/camera.cpp.s
+CMakeFiles/PA8.dir/src/engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/engine.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jake/cs480Emery/PA8/src/engine.cpp -o CMakeFiles/PA8.dir/src/engine.cpp.s
 
-CMakeFiles/PA8.dir/src/camera.cpp.o.requires:
+CMakeFiles/PA8.dir/src/engine.cpp.o.requires:
 
-.PHONY : CMakeFiles/PA8.dir/src/camera.cpp.o.requires
+.PHONY : CMakeFiles/PA8.dir/src/engine.cpp.o.requires
 
-CMakeFiles/PA8.dir/src/camera.cpp.o.provides: CMakeFiles/PA8.dir/src/camera.cpp.o.requires
-	$(MAKE) -f CMakeFiles/PA8.dir/build.make CMakeFiles/PA8.dir/src/camera.cpp.o.provides.build
-.PHONY : CMakeFiles/PA8.dir/src/camera.cpp.o.provides
+CMakeFiles/PA8.dir/src/engine.cpp.o.provides: CMakeFiles/PA8.dir/src/engine.cpp.o.requires
+	$(MAKE) -f CMakeFiles/PA8.dir/build.make CMakeFiles/PA8.dir/src/engine.cpp.o.provides.build
+.PHONY : CMakeFiles/PA8.dir/src/engine.cpp.o.provides
 
-CMakeFiles/PA8.dir/src/camera.cpp.o.provides.build: CMakeFiles/PA8.dir/src/camera.cpp.o
+CMakeFiles/PA8.dir/src/engine.cpp.o.provides.build: CMakeFiles/PA8.dir/src/engine.cpp.o
 
 
 CMakeFiles/PA8.dir/src/shader.cpp.o: CMakeFiles/PA8.dir/flags.make
 CMakeFiles/PA8.dir/src/shader.cpp.o: ../src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PA8.dir/src/shader.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/shader.cpp.o -c /home/austin/workspace/cs480Emery/PA8/src/shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PA8.dir/src/shader.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/shader.cpp.o -c /home/jake/cs480Emery/PA8/src/shader.cpp
 
 CMakeFiles/PA8.dir/src/shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/shader.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/austin/workspace/cs480Emery/PA8/src/shader.cpp > CMakeFiles/PA8.dir/src/shader.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jake/cs480Emery/PA8/src/shader.cpp > CMakeFiles/PA8.dir/src/shader.cpp.i
 
 CMakeFiles/PA8.dir/src/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/shader.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/austin/workspace/cs480Emery/PA8/src/shader.cpp -o CMakeFiles/PA8.dir/src/shader.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jake/cs480Emery/PA8/src/shader.cpp -o CMakeFiles/PA8.dir/src/shader.cpp.s
 
 CMakeFiles/PA8.dir/src/shader.cpp.o.requires:
 
@@ -225,52 +225,52 @@ CMakeFiles/PA8.dir/src/shader.cpp.o.provides: CMakeFiles/PA8.dir/src/shader.cpp.
 CMakeFiles/PA8.dir/src/shader.cpp.o.provides.build: CMakeFiles/PA8.dir/src/shader.cpp.o
 
 
-CMakeFiles/PA8.dir/src/graphics.cpp.o: CMakeFiles/PA8.dir/flags.make
-CMakeFiles/PA8.dir/src/graphics.cpp.o: ../src/graphics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/PA8.dir/src/graphics.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/graphics.cpp.o -c /home/austin/workspace/cs480Emery/PA8/src/graphics.cpp
+CMakeFiles/PA8.dir/src/main.cpp.o: CMakeFiles/PA8.dir/flags.make
+CMakeFiles/PA8.dir/src/main.cpp.o: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/PA8.dir/src/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PA8.dir/src/main.cpp.o -c /home/jake/cs480Emery/PA8/src/main.cpp
 
-CMakeFiles/PA8.dir/src/graphics.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/graphics.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/austin/workspace/cs480Emery/PA8/src/graphics.cpp > CMakeFiles/PA8.dir/src/graphics.cpp.i
+CMakeFiles/PA8.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PA8.dir/src/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jake/cs480Emery/PA8/src/main.cpp > CMakeFiles/PA8.dir/src/main.cpp.i
 
-CMakeFiles/PA8.dir/src/graphics.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/graphics.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/austin/workspace/cs480Emery/PA8/src/graphics.cpp -o CMakeFiles/PA8.dir/src/graphics.cpp.s
+CMakeFiles/PA8.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PA8.dir/src/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jake/cs480Emery/PA8/src/main.cpp -o CMakeFiles/PA8.dir/src/main.cpp.s
 
-CMakeFiles/PA8.dir/src/graphics.cpp.o.requires:
+CMakeFiles/PA8.dir/src/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/PA8.dir/src/graphics.cpp.o.requires
+.PHONY : CMakeFiles/PA8.dir/src/main.cpp.o.requires
 
-CMakeFiles/PA8.dir/src/graphics.cpp.o.provides: CMakeFiles/PA8.dir/src/graphics.cpp.o.requires
-	$(MAKE) -f CMakeFiles/PA8.dir/build.make CMakeFiles/PA8.dir/src/graphics.cpp.o.provides.build
-.PHONY : CMakeFiles/PA8.dir/src/graphics.cpp.o.provides
+CMakeFiles/PA8.dir/src/main.cpp.o.provides: CMakeFiles/PA8.dir/src/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/PA8.dir/build.make CMakeFiles/PA8.dir/src/main.cpp.o.provides.build
+.PHONY : CMakeFiles/PA8.dir/src/main.cpp.o.provides
 
-CMakeFiles/PA8.dir/src/graphics.cpp.o.provides.build: CMakeFiles/PA8.dir/src/graphics.cpp.o
+CMakeFiles/PA8.dir/src/main.cpp.o.provides.build: CMakeFiles/PA8.dir/src/main.cpp.o
 
 
 # Object files for target PA8
 PA8_OBJECTS = \
-"CMakeFiles/PA8.dir/src/main.cpp.o" \
-"CMakeFiles/PA8.dir/src/engine.cpp.o" \
+"CMakeFiles/PA8.dir/src/camera.cpp.o" \
+"CMakeFiles/PA8.dir/src/graphics.cpp.o" \
 "CMakeFiles/PA8.dir/src/object.cpp.o" \
 "CMakeFiles/PA8.dir/src/window.cpp.o" \
 "CMakeFiles/PA8.dir/src/physics.cpp.o" \
-"CMakeFiles/PA8.dir/src/camera.cpp.o" \
+"CMakeFiles/PA8.dir/src/engine.cpp.o" \
 "CMakeFiles/PA8.dir/src/shader.cpp.o" \
-"CMakeFiles/PA8.dir/src/graphics.cpp.o"
+"CMakeFiles/PA8.dir/src/main.cpp.o"
 
 # External object files for target PA8
 PA8_EXTERNAL_OBJECTS =
 
-PA8: CMakeFiles/PA8.dir/src/main.cpp.o
-PA8: CMakeFiles/PA8.dir/src/engine.cpp.o
+PA8: CMakeFiles/PA8.dir/src/camera.cpp.o
+PA8: CMakeFiles/PA8.dir/src/graphics.cpp.o
 PA8: CMakeFiles/PA8.dir/src/object.cpp.o
 PA8: CMakeFiles/PA8.dir/src/window.cpp.o
 PA8: CMakeFiles/PA8.dir/src/physics.cpp.o
-PA8: CMakeFiles/PA8.dir/src/camera.cpp.o
+PA8: CMakeFiles/PA8.dir/src/engine.cpp.o
 PA8: CMakeFiles/PA8.dir/src/shader.cpp.o
-PA8: CMakeFiles/PA8.dir/src/graphics.cpp.o
+PA8: CMakeFiles/PA8.dir/src/main.cpp.o
 PA8: CMakeFiles/PA8.dir/build.make
 PA8: /usr/lib/x86_64-linux-gnu/libGLEW.so
 PA8: /usr/lib/x86_64-linux-gnu/libGLU.so
@@ -279,12 +279,12 @@ PA8: /usr/lib/x86_64-linux-gnu/libSDL2main.a
 PA8: /usr/lib/x86_64-linux-gnu/libSDL2.so
 PA8: /usr/lib/x86_64-linux-gnu/libassimp.so
 PA8: /usr/lib/x86_64-linux-gnu/libMagick++-6.Q16.so
-PA8: /usr/local/lib/libBulletDynamics.a
-PA8: /usr/local/lib/libBulletCollision.a
-PA8: /usr/local/lib/libLinearMath.a
-PA8: /usr/local/lib/libBulletSoftBody.a
+PA8: /usr/lib/x86_64-linux-gnu/libBulletDynamics.so
+PA8: /usr/lib/x86_64-linux-gnu/libBulletCollision.so
+PA8: /usr/lib/x86_64-linux-gnu/libLinearMath.so
+PA8: /usr/lib/x86_64-linux-gnu/libBulletSoftBody.so
 PA8: CMakeFiles/PA8.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable PA8"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jake/cs480Emery/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable PA8"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PA8.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -292,14 +292,14 @@ CMakeFiles/PA8.dir/build: PA8
 
 .PHONY : CMakeFiles/PA8.dir/build
 
-CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/main.cpp.o.requires
-CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/engine.cpp.o.requires
+CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/camera.cpp.o.requires
+CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/graphics.cpp.o.requires
 CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/object.cpp.o.requires
 CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/window.cpp.o.requires
 CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/physics.cpp.o.requires
-CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/camera.cpp.o.requires
+CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/engine.cpp.o.requires
 CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/shader.cpp.o.requires
-CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/graphics.cpp.o.requires
+CMakeFiles/PA8.dir/requires: CMakeFiles/PA8.dir/src/main.cpp.o.requires
 
 .PHONY : CMakeFiles/PA8.dir/requires
 
@@ -308,6 +308,6 @@ CMakeFiles/PA8.dir/clean:
 .PHONY : CMakeFiles/PA8.dir/clean
 
 CMakeFiles/PA8.dir/depend:
-	cd /home/austin/workspace/cs480Emery/PA8/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/austin/workspace/cs480Emery/PA8 /home/austin/workspace/cs480Emery/PA8 /home/austin/workspace/cs480Emery/PA8/build /home/austin/workspace/cs480Emery/PA8/build /home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jake/cs480Emery/PA8/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jake/cs480Emery/PA8 /home/jake/cs480Emery/PA8 /home/jake/cs480Emery/PA8/build /home/jake/cs480Emery/PA8/build /home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PA8.dir/depend
 

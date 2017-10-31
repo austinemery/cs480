@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/austin/workspace/cs480Emery/PA8/src/camera.cpp" "/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/camera.cpp.o"
-  "/home/austin/workspace/cs480Emery/PA8/src/engine.cpp" "/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/engine.cpp.o"
-  "/home/austin/workspace/cs480Emery/PA8/src/graphics.cpp" "/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/graphics.cpp.o"
-  "/home/austin/workspace/cs480Emery/PA8/src/main.cpp" "/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/main.cpp.o"
-  "/home/austin/workspace/cs480Emery/PA8/src/object.cpp" "/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/object.cpp.o"
-  "/home/austin/workspace/cs480Emery/PA8/src/physics.cpp" "/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/physics.cpp.o"
-  "/home/austin/workspace/cs480Emery/PA8/src/shader.cpp" "/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/shader.cpp.o"
-  "/home/austin/workspace/cs480Emery/PA8/src/window.cpp" "/home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/window.cpp.o"
+  "/home/jake/cs480Emery/PA8/src/camera.cpp" "/home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/camera.cpp.o"
+  "/home/jake/cs480Emery/PA8/src/engine.cpp" "/home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/engine.cpp.o"
+  "/home/jake/cs480Emery/PA8/src/graphics.cpp" "/home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/graphics.cpp.o"
+  "/home/jake/cs480Emery/PA8/src/main.cpp" "/home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/main.cpp.o"
+  "/home/jake/cs480Emery/PA8/src/object.cpp" "/home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/object.cpp.o"
+  "/home/jake/cs480Emery/PA8/src/physics.cpp" "/home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/physics.cpp.o"
+  "/home/jake/cs480Emery/PA8/src/shader.cpp" "/home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/shader.cpp.o"
+  "/home/jake/cs480Emery/PA8/src/window.cpp" "/home/jake/cs480Emery/PA8/build/CMakeFiles/PA8.dir/src/window.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -28,7 +28,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/SDL2"
   "/usr/include/ImageMagick-6"
   "/usr/include/x86_64-linux-gnu/ImageMagick-6"
-  "/usr/local/include/bullet"
+  "/usr/include/bullet"
   )
 
 # Targets to which this target links.
