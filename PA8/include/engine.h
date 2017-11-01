@@ -6,6 +6,7 @@
 
 #include "window.h"
 #include "graphics.h"
+#include "camera.h"
 
 class Engine
 {
@@ -32,6 +33,9 @@ class Engine
     unsigned int m_DT;
     long long m_currentTimeMillis;
     bool m_running;
+
+    float rotation;
+    float zoom;
 };
 
 #endif // ENGINE_H

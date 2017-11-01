@@ -45,6 +45,9 @@ bool Engine::Initialize()
   // Set the time
   m_currentTimeMillis = GetCurrentTimeMillis();
 
+  rotation = 0.0f;
+  zoom = 1.0f;
+
   // No errors
   return true;
 }
@@ -89,26 +92,118 @@ void Engine::Keyboard(float& p_rotationDir, float& p_orbitDir, float& m_rotation
       m_running = false;
     }
 
-    //left arrow, rotates the planet counterclockwise
-    else if(m_event.key.keysym.scancode == 80)
+    //left arrow and right arrow, rotates the camera to the left and to the right
+    else if(m_event.key.keysym.scancode == 80 || m_event.key.keysym.scancode == 79)
     {
-      p_rotationDir = 1;
+      float rotationScale = 360.0f / m_WINDOW_WIDTH;
+
+      if (m_event.key.keysym.scancode == 80) //the left arrow
+      {
+        rotation += (rotationScale * -6);
+      }
+      else //the right arrow
+      {
+        rotation += (rotationScale * 6);
+      }
+      
+      //to get back in 0 - 360 if needed
+      while(rotation > 360)
+      {
+        rotation -= 360.0f;
+      }
+      while(rotation < 0)
+      {
+        rotation += 360.0f;
+      }
+
+      m_graphics->getCamera()->Update(rotation, zoom);
     }
 
-    //right arrow, rotates the planet clockwise
-    else if(m_event.key.keysym.scancode == 79)
+    //up arrow and down arrow, zooms in and out
+    else if(m_event.key.keysym.scancode == 82 || m_event.key.keysym.scancode == 81)
     {
-      p_rotationDir = -1;
+      float zoomScale = 0.1f * zoom;
+
+      //zoom in
+      if(m_event.key.keysym.scancode == 82) // up arrow
+      {
+        zoom -= zoomScale;
+      }
+      else //down arrow
+      {
+        zoom += zoomScale;
+      }
+
+      //to lock distances
+      if (zoom > 2)
+      {
+        zoom = 2;
+      }
+      if (zoom < 0)
+      {
+        zoom = 0;
+      }
+
+      m_graphics->getCamera()->Update(rotation, zoom);
     }
 
-    //space, stops the rotation of the planet
+    //space
     else if(m_event.key.keysym.scancode == 44)
     {
-      p_rotationDir = 0;
+      
     }
+  }
 
-    //std::cout << m_event.key.keysym.scancode << std::endl;
+  //For rotating around a point, right mouse button and move the mouse
+  if (m_event.type == SDL_MOUSEMOTION && m_event.button.button == SDL_BUTTON(SDL_BUTTON_RIGHT))
+  {
+      float rotationScale = 360.0f / m_WINDOW_WIDTH;
 
+      rotation += (rotationScale * m_event.motion.xrel);
+
+      //to get back in 0 - 360 if needed
+      while(rotation > 360)
+      {
+        rotation -= 360.0f;
+      }
+      while(rotation < 0)
+      {
+        rotation += 360.0f;
+      }
+
+      m_graphics->getCamera()->Update(rotation, zoom);
+  }
+
+  //For zooming at a point, the mouse scroll wheel
+  if (m_event.type == SDL_MOUSEWHEEL)
+  {
+      //zooming speed
+      float zoomScale = 0.1f * zoom;
+
+      //zoom in
+      if(m_event.wheel.y == 1) // scroll up
+      {
+        //std::cout << "SCROLLING UP" << std::endl;
+        zoom -= zoomScale;
+      }
+      //zoom out
+      else if(m_event.wheel.y == -1) // scroll down
+      {
+        //std::cout << "SCROLLING DOWN" << std::endl;
+        zoom += zoomScale;
+      }
+
+      //to lock distances
+      if (zoom > 2)
+      {
+        zoom = 2;
+      }
+      if (zoom < 0)
+      {
+        zoom = 0;
+      }
+
+      m_graphics->getCamera()->Update(rotation, zoom);
   }
 }
 

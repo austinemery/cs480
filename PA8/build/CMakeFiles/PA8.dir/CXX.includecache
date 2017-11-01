@@ -19,6 +19,8 @@ window.h
 ../include/window.h
 graphics.h
 ../include/graphics.h
+camera.h
+../include/camera.h
 
 ../include/graphics.h
 iostream

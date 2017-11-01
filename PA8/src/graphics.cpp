@@ -184,6 +184,7 @@ bool Graphics::Initialize(int width, int height)
   }
   */
 //////////////////////////////////////////////////////////////////////////////////
+
   //enable depth testing
   glEnable(GL_DEPTH_TEST);
   glDepthFunc(GL_LESS);
@@ -285,3 +286,7 @@ std::string Graphics::ErrorString(GLenum error)
   }
 }
 
+Camera* Graphics::getCamera()
+{
+  return m_camera;
+}

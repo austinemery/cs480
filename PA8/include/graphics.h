@@ -18,7 +18,7 @@ class Graphics
     bool Initialize(int width, int height);
     void Update(unsigned int dt);
     void Render();
-
+    Camera* getCamera();
   private:
     std::string ErrorString(GLenum error);
 
