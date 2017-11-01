@@ -58,43 +58,37 @@ bool Graphics::Initialize(int width, int height)
 
   //The ground plane
   ground_1 = new Object("plane", objTriMesh);
-  cout << objTriMesh->getNumTriangles() << endl;
   btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 0);
   m_physics->addGroundPlane(groundShape);
 
 
 
   // Create the objects
-  delete objTriMesh;
   objTriMesh = new btTriangleMesh();
 
   planet_1 = new Object("earth", objTriMesh);
-  cout << objTriMesh->getNumTriangles() << endl;
   btCollisionShape *sphereShape = new btConvexTriangleMeshShape(objTriMesh, true); 
   btDefaultMotionState* ballMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(3, 10, 0)));
   m_physics->addObject(sphereShape, ballMotionState, 1);
 
   //Second Object
-  delete objTriMesh;
   objTriMesh = new btTriangleMesh();
 
   moon_1 = new Object("earth", objTriMesh);
-  btDefaultMotionState* secondBallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(-4, 25, 0)));
+  btDefaultMotionState* secondBallMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(-4.5, 25, 0)));
   m_physics->addObject(sphereShape, secondBallMotionState, 1);
 
   //cout << objTriMesh[0] <<
 
   //Add the Cube
-  delete objTriMesh;
   objTriMesh = new btTriangleMesh();
 
   cube_1 = new Object("cube", objTriMesh);
   btCollisionShape *cubeShape = new btConvexTriangleMeshShape(objTriMesh, true);
-  btDefaultMotionState *cubeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(-5, 20, 0)));
+  btDefaultMotionState *cubeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 30, 0)));
   m_physics->addObject(cubeShape, cubeMotionState, 1);
 
   //Add the cylinder
-  delete objTriMesh;
   objTriMesh = new btTriangleMesh();
 
   cylinder_1 = new Object("cylinder", objTriMesh);
