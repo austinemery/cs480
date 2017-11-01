@@ -78,7 +78,7 @@ void Physics::addObject(btCollisionShape* shape, btDefaultMotionState* motionSta
 void Physics::updateCubeVelocity(float velocityX, float velocityZ)
 {
 	//2 is the index of the cube
-	btVector3 velocityVec = {velocityX, 0.5, velocityZ};
+	btVector3 velocityVec = {velocityX, 1, velocityZ};
 	//std::cout << velocityX << ' ' << velocityZ << std::endl;
 	physicsObjectVector[2]->setLinearVelocity(velocityVec);
 }

@@ -33,16 +33,6 @@ void Object::Render()
 
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 
-  glDrawElements(GL_TRIANGLES, Indices.size(), GL_UNSIGNED_INT, 0);
-
-  //Assimp Stuff
-
-
-  //std::cout << "Object: " << modelName << std::endl;
-
-  //std::cout << "Testure: " << textureName << std::endl;
-
-  //cout << image.columns() << endl;
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.columns(), image.rows(), 0, GL_RGBA, GL_UNSIGNED_BYTE, blob.data() );
   glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -71,7 +61,7 @@ void Object::configRead(std::string objectName)
 				configFile >> tempString;
 				if (tempString == objectName)
 				{
-					std::cout << tempString << std::endl;
+					//std::cout << tempString << std::endl;
 					configFile >> tempString;
 					if (tempString == "objFileName")
 					{
@@ -79,7 +69,7 @@ void Object::configRead(std::string objectName)
 						tempModelName.append(tempString);
 						modelName = tempModelName;
 					}
-					std::cout << tempString << std::endl;
+					//std::cout << tempString << std::endl;
 					configFile >> tempString;
 					if (tempString == "objTextureName")
 					{
@@ -87,7 +77,7 @@ void Object::configRead(std::string objectName)
 						tempTextureName.append(tempString);
 						textureName = tempTextureName;
 					}
-					std::cout << tempString << std::endl;
+					//std::cout << tempString << std::endl;
 				}
 			}
 		}

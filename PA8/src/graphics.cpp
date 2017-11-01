@@ -78,7 +78,7 @@ bool Graphics::Initialize(int width, int height)
 
   cube_1 = new Object("cube", objTriMesh);
   btCollisionShape *cubeShape = new btConvexTriangleMeshShape(objTriMesh, true);
-  btDefaultMotionState *cubeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 30, 0)));
+  btDefaultMotionState *cubeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(-5, 10, -5)));
   m_physics->addObject(cubeShape, cubeMotionState, 1);
 
   //Add the cylinder

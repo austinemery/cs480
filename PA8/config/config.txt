@@ -4,7 +4,7 @@ objTextureName earth.jpg
 
 objName cube
 objFileName cube.obj
-objTextureName white.jpg
+objTextureName blue.jpg
 
 objName cylinder
 objFileName cylinder.obj

@@ -18,7 +18,7 @@ W A S D : will move the cube
 
 
 ## EXTRA CREDIT
-All of our objects are load vie triangle meshes
+All of our objects are load via triangle meshes
 
 
 ## FEATURES
