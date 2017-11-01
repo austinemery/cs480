@@ -90,6 +90,8 @@ bool Graphics::Initialize(int width, int height)
   m_physics->addObject(cylinderShape, cylinderMotionState, 0);
 
   //The Table
+  objTriMesh = new btTriangleMesh();
+  
   ground_1 = new Object("table", objTriMesh);
   btCollisionShape *tableShape = new btBvhTriangleMeshShape(objTriMesh, true);
   btDefaultMotionState* tableMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 0, 0)));
