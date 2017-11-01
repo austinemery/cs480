@@ -135,6 +135,7 @@ bool Graphics::Initialize(int width, int height)
     printf("m_modelMatrix not found\n");
     return false;
   }
+/*
 ////////////////////////////////////////////////////////////////////////////////
   // Locate the projection matrix in the shader
   p_projectionMatrix = m_shader->GetUniformLocation("projectionMatrix");
@@ -160,6 +161,7 @@ bool Graphics::Initialize(int width, int height)
     return false;
   }
 //////////////////////////////////////////////////////////////////////////////////
+*/
   //enable depth testing
   glEnable(GL_DEPTH_TEST);
   glDepthFunc(GL_LESS);
@@ -261,3 +263,7 @@ std::string Graphics::ErrorString(GLenum error)
   }
 }
 
+Camera* Graphics::getCamera()
+{
+  return m_camera;
+}

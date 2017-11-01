@@ -38,9 +38,9 @@ void Object::Render()
   //Assimp Stuff
 
 
-  std::cout << "Object: " << modelName << std::endl;
+  //std::cout << "Object: " << modelName << std::endl;
 
-  std::cout << "Testure: " << textureName << std::endl;
+  //std::cout << "Testure: " << textureName << std::endl;
 
   //cout << image.columns() << endl;
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image.columns(), image.rows(), 0, GL_RGBA, GL_UNSIGNED_BYTE, blob.data() );

@@ -16,7 +16,10 @@ bool Camera::Initialize(int w, int h)
   //  if you will be having a moving camera the view matrix will need to more dynamic
   //  ...Like you should update it before you render more dynamic 
   //  for this project having them static will be fine
-  view = glm::lookAt( glm::vec3(0.0, 8.0, -16.0), //Eye Position
+  positionX = 0.0;
+  positionZ = -16.0;
+
+  view = glm::lookAt( glm::vec3(0.0, 14.0, -16.0), //Eye Position
                       glm::vec3(0.0, 0.0, 0.0), //Focus point
                       glm::vec3(0.0, 1.0, 0.0)); //Positive Y is up
 
@@ -38,3 +41,15 @@ glm::mat4 Camera::GetView()
 }
 
 
+bool Camera::Update(float rotation, float zoom)
+{
+  glm::vec3 tempVec = glm::vec3(0.0, 14.0, -16.0);
+  float angle = rotation * (float) M_PI / 180.0f;
+  
+  tempVec = glm::rotate(tempVec, angle, glm::vec3(0.0, 1.0, 0.0));
+  tempVec *= zoom;
+
+  view = glm::lookAt( tempVec, //Eye Position
+                      glm::vec3(0.0, 0.0, 0.0), //Focus point
+                      glm::vec3(0.0, 1.0, 0.0)); //Positive Y is up
+}
