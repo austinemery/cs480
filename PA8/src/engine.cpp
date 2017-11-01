@@ -96,60 +96,62 @@ void Engine::Keyboard(float& p_rotationDir, float& p_orbitDir, float& m_rotation
 
     //W A S D movements, change the velocity of the cube
     else if (m_event.key.keysym.scancode == SDL_SCANCODE_A || m_event.key.keysym.scancode == SDL_SCANCODE_D)
-    {
-      //std::cout << "PRESSING A" << std::endl;
-      
+    {      
       float velocityScale;
 
       std::cout << velocityX << std::endl;
       if (m_event.key.keysym.scancode == SDL_SCANCODE_A)
       {
-        velocityScale = -1;
+        velocityScale = 1;
+        velocityX = 3;
       }
       else 
       {
-        velocityScale = 1;
+        velocityScale = -1;
+        velocityX = -3;
       }
       
-      velocityX += velocityScale;
+      //velocityX += velocityScale;
 
-      if (velocityX > 50)
+      if (velocityX > 10)
       {
-        velocityX = 50.0f;
+        velocityX = 10.0f;
       }
-      if (velocityX < -50)
+      if (velocityX < -10)
       {
-        velocityX = -50.0f;
+        velocityX = -10.0f;
       }
-
+      m_graphics->getPhysics()->updateCubeVelocity(velocityX, velocityZ);
+      velocityX = 0;
     }
     else if (m_event.key.keysym.scancode == SDL_SCANCODE_W || m_event.key.keysym.scancode == SDL_SCANCODE_S)
     {
-      //std::cout << "PRESSING A" << std::endl;
-      
       float velocityScale;
 
       std::cout << velocityZ << std::endl;
       if (m_event.key.keysym.scancode == SDL_SCANCODE_W)
       {
         velocityScale = 1;
+        velocityZ = 3;
       }
       else 
       {
         velocityScale = -1;
+        velocityZ = -3;
       }
       
-      velocityZ += velocityScale;
+      //velocityZ += velocityScale;
 
-      if (velocityZ > 50)
+      if (velocityZ > 10)
       {
-        velocityZ = 50.0f;
+        velocityZ = 10.0f;
       }
-      if (velocityZ < -50)
+      if (velocityZ < -10)
       {
-        velocityZ = -50.0f;
+        velocityZ = -10.0f;
       }
-
+      m_graphics->getPhysics()->updateCubeVelocity(velocityX, velocityZ);
+      velocityZ = 0;
     }
 
     //left arrow and right arrow, rotates the camera to the left and to the right

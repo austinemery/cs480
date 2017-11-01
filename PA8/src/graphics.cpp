@@ -289,3 +289,8 @@ Camera* Graphics::getCamera()
 {
   return m_camera;
 }
+
+Physics* Graphics::getPhysics()
+{
+  return m_physics;
+}

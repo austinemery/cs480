@@ -19,6 +19,7 @@ class Graphics
     void Update(unsigned int dt);
     void Render();
     Camera* getCamera();
+    Physics* getPhysics();
 
   private:
     std::string ErrorString(GLenum error);

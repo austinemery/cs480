@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jake/cs480Emery/PA8
+CMAKE_SOURCE_DIR = /home/austin/workspace/cs480Emery/PA8
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jake/cs480Emery/PA8/build
+CMAKE_BINARY_DIR = /home/austin/workspace/cs480Emery/PA8/build
 
 # Utility rule file for PA8_SUCCESSFUL.
 
@@ -58,7 +58,7 @@ CMakeFiles/PA8_SUCCESSFUL: PA8
 	/usr/bin/cmake -E echo =====================
 	/usr/bin/cmake -E echo \ \ Compile\ complete!
 	/usr/bin/cmake -E echo =====================
-	/usr/bin/cmake -E echo /home/jake/cs480Emery/PA8/build
+	/usr/bin/cmake -E echo /home/austin/workspace/cs480Emery/PA8/build
 
 PA8_SUCCESSFUL: CMakeFiles/PA8_SUCCESSFUL
 PA8_SUCCESSFUL: CMakeFiles/PA8_SUCCESSFUL.dir/build.make
@@ -75,6 +75,6 @@ CMakeFiles/PA8_SUCCESSFUL.dir/clean:
 .PHONY : CMakeFiles/PA8_SUCCESSFUL.dir/clean
 
 CMakeFiles/PA8_SUCCESSFUL.dir/depend:
-	cd /home/jake/cs480Emery/PA8/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jake/cs480Emery/PA8 /home/jake/cs480Emery/PA8 /home/jake/cs480Emery/PA8/build /home/jake/cs480Emery/PA8/build /home/jake/cs480Emery/PA8/build/CMakeFiles/PA8_SUCCESSFUL.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/austin/workspace/cs480Emery/PA8/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/austin/workspace/cs480Emery/PA8 /home/austin/workspace/cs480Emery/PA8 /home/austin/workspace/cs480Emery/PA8/build /home/austin/workspace/cs480Emery/PA8/build /home/austin/workspace/cs480Emery/PA8/build/CMakeFiles/PA8_SUCCESSFUL.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PA8_SUCCESSFUL.dir/depend
 

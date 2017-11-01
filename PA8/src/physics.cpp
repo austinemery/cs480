@@ -74,3 +74,10 @@ void Physics::addObject(btCollisionShape* shape, btDefaultMotionState* motionSta
   dynamicsWorld->addRigidBody(physicsObjectVector.back());
   //delete tempBody;
 }
+
+void Physics::updateCubeVelocity(float velocityX, float velocityZ)
+{
+	//2 is the index of the cube
+	btVector3 velocityVec = {velocityX, 0, velocityZ};
+	physicsObjectVector[2]->setLinearVelocity(velocityVec);
+}
