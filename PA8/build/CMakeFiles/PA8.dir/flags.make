@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=gnu++11   -lassimp -g
 
 CXX_DEFINES = -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16 -DUNIX
 
-CXX_INCLUDES = -I/home/jake/cs480Emery/PA8/include -I/usr/include/SDL2 -I/usr/include/ImageMagick-6 -I/usr/include/x86_64-linux-gnu/ImageMagick-6 -I/usr/include/bullet 
+CXX_INCLUDES = -I/home/austin/workspace/cs480Emery/PA8/include -I/usr/include/SDL2 -I/usr/include/ImageMagick-6 -I/usr/include/x86_64-linux-gnu/ImageMagick-6 -I/usr/local/include/bullet 
 

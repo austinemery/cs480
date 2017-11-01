@@ -45,6 +45,8 @@ bool Engine::Initialize()
   // Set the time
   m_currentTimeMillis = GetCurrentTimeMillis();
 
+  velocityX = 0.0f;
+  velocityZ = 0.0f;
   rotation = 0.0f;
   zoom = 1.0f;
 
@@ -90,6 +92,64 @@ void Engine::Keyboard(float& p_rotationDir, float& p_orbitDir, float& m_rotation
     if(m_event.key.keysym.sym == SDLK_ESCAPE)
     {
       m_running = false;
+    }
+
+    //W A S D movements, change the velocity of the cube
+    else if (m_event.key.keysym.scancode == SDL_SCANCODE_A || m_event.key.keysym.scancode == SDL_SCANCODE_D)
+    {
+      //std::cout << "PRESSING A" << std::endl;
+      
+      float velocityScale;
+
+      std::cout << velocityX << std::endl;
+      if (m_event.key.keysym.scancode == SDL_SCANCODE_A)
+      {
+        velocityScale = -1;
+      }
+      else 
+      {
+        velocityScale = 1;
+      }
+      
+      velocityX += velocityScale;
+
+      if (velocityX > 50)
+      {
+        velocityX = 50.0f;
+      }
+      if (velocityX < -50)
+      {
+        velocityX = -50.0f;
+      }
+
+    }
+    else if (m_event.key.keysym.scancode == SDL_SCANCODE_W || m_event.key.keysym.scancode == SDL_SCANCODE_S)
+    {
+      //std::cout << "PRESSING A" << std::endl;
+      
+      float velocityScale;
+
+      std::cout << velocityZ << std::endl;
+      if (m_event.key.keysym.scancode == SDL_SCANCODE_W)
+      {
+        velocityScale = 1;
+      }
+      else 
+      {
+        velocityScale = -1;
+      }
+      
+      velocityZ += velocityScale;
+
+      if (velocityZ > 50)
+      {
+        velocityZ = 50.0f;
+      }
+      if (velocityZ < -50)
+      {
+        velocityZ = -50.0f;
+      }
+
     }
 
     //left arrow and right arrow, rotates the camera to the left and to the right

@@ -36,6 +36,8 @@ class Engine
 
     float rotation;
     float zoom;
+    float velocityX;
+    float velocityZ;
 };
 
 #endif // ENGINE_H
