@@ -10,6 +10,6 @@ objName cylinder
 objFileName cylinder.obj
 objTextureName white.jpg
 
-objName plane
-objFileName plane.obj
+objName table
+objFileName table.obj
 objTextureName grey.jpg

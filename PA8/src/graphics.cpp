@@ -56,13 +56,6 @@ bool Graphics::Initialize(int width, int height)
 
   btTriangleMesh* objTriMesh = new btTriangleMesh();
 
-  //The ground plane
-  ground_1 = new Object("plane", objTriMesh);
-  btCollisionShape* groundShape = new btStaticPlaneShape(btVector3(0, 1, 0), 0);
-  m_physics->addGroundPlane(groundShape);
-
-
-
   // Create the objects
   objTriMesh = new btTriangleMesh();
 
@@ -92,9 +85,15 @@ bool Graphics::Initialize(int width, int height)
   objTriMesh = new btTriangleMesh();
 
   cylinder_1 = new Object("cylinder", objTriMesh);
-  btCollisionShape *cylinderShape = new btConvexTriangleMeshShape(objTriMesh, true);
+  btCollisionShape *cylinderShape = new btBvhTriangleMeshShape(objTriMesh, true);
   btDefaultMotionState *cylinderMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(5, 1, 0)));
   m_physics->addObject(cylinderShape, cylinderMotionState, 0);
+
+  //The Table
+  ground_1 = new Object("table", objTriMesh);
+  btCollisionShape *tableShape = new btBvhTriangleMeshShape(objTriMesh, true);
+  btDefaultMotionState* tableMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 0, 0)));
+  m_physics->addObject(tableShape, tableMotionState, 0);
 
   // Set up the shaders
   m_shader = new Shader();

@@ -99,7 +99,7 @@ void Engine::Keyboard(float& p_rotationDir, float& p_orbitDir, float& m_rotation
     {      
       float velocityScale;
 
-      std::cout << velocityX << std::endl;
+      //std::cout << velocityX << std::endl;
       if (m_event.key.keysym.scancode == SDL_SCANCODE_A)
       {
         velocityScale = 1;
@@ -128,7 +128,7 @@ void Engine::Keyboard(float& p_rotationDir, float& p_orbitDir, float& m_rotation
     {
       float velocityScale;
 
-      std::cout << velocityZ << std::endl;
+      //std::cout << velocityZ << std::endl;
       if (m_event.key.keysym.scancode == SDL_SCANCODE_W)
       {
         velocityScale = 1;
