@@ -1,4 +1,4 @@
-# PA4: Model Loading
+# PA8: BULLET
 
 # Dependencies, Building, and Running
 
@@ -7,22 +7,26 @@ For both of the operating systems to run this project installation of these thre
 
 This project uses OpenGL 3.3. Some computers, such as virtual machines in the ECC, can not run this version. In in order to run OpenGL 2.7 follow the instructions at [Using OpenGL 2.7](https://github.com/HPC-Vis/computer-graphics/wiki/Using-OpenGL-2.7)
 
+## Building and Running
+Mousewheel up/down : will zoom in and out
+If you hold rightmouse : pan around a point
+Up/down arrow : will zoom in and out
+Left/right arrow : will pan left and right around point
+
+W A S D : will move the cube
+
 ### Ubuntu/Linux
 ```bash
 sudo apt-get install libglew-dev libglm-dev libsdl2-dev
-```
-
-### Mac OSX
-Installation of brew is suggested to easily install the libs. Ensure that the latest version of the Developer Tools is installed.
-```bash
-brew install glew glm sdl2
+sudo apt-get install libglew-dev libglm-dev libsdl2-dev 
+sudo apt-get install libassimp-dev
+sudo apt-get install libmagick++-dev
+sudo apt-get install libbullet-dev
 ```
 
 ## Building and Running
-To build this project there are two options. One is to use CMake which makes including new libraries easier, and handles new files added automatically to the src and include directory. CMake is a small new learning curve but makes things easier in the future.
-The second option is to use the provided Makefile which is used as usual.
+Use cmake
 
-Running the make in a separate directory will allow easy cleanup of the build data, and an easy way to prevent unnecessary data to be added to the git repository.  
 
 ### CMake Instructions
 The building of the project is done using CMake, installation with apt-get or brew may be necessary. Later use with CMake and Shader files will be require the copy of a directory where those files are stored (ex. shaders). To do this in the ```add_custom_target``` function place 
@@ -35,7 +39,7 @@ mkdir build
 cd build
 cmake ..
 make
-./Tutorial
+./PA8
 ```
 
 ### Makefile Instructions 

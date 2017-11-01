@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/PA8.dir/src/graphics.cpp.o"
+  "CMakeFiles/PA8.dir/src/shader.cpp.o"
+  "CMakeFiles/PA8.dir/src/object.cpp.o"
+  "CMakeFiles/PA8.dir/src/camera.cpp.o"
   "CMakeFiles/PA8.dir/src/main.cpp.o"
   "CMakeFiles/PA8.dir/src/engine.cpp.o"
-  "CMakeFiles/PA8.dir/src/object.cpp.o"
   "CMakeFiles/PA8.dir/src/window.cpp.o"
   "CMakeFiles/PA8.dir/src/physics.cpp.o"
-  "CMakeFiles/PA8.dir/src/camera.cpp.o"
-  "CMakeFiles/PA8.dir/src/shader.cpp.o"
-  "CMakeFiles/PA8.dir/src/graphics.cpp.o"
   "PA8.pdb"
   "PA8"
 )
