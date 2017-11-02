@@ -1,0 +1,15 @@
+objName earth
+objFileName earth.obj
+objTextureName earth.jpg
+
+objName cube
+objFileName cube.obj
+objTextureName blue.jpg
+
+objName cylinder
+objFileName cylinder.obj
+objTextureName white.jpg
+
+objName table
+objFileName table.obj
+objTextureName grey.jpg
