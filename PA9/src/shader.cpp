@@ -2,7 +2,8 @@
 
 Shader::Shader()
 {
-  m_shaderProg = 0;
+  m_vertexLightProg = 0;
+  m_fragmentLightProg = 0;
 }
 
 Shader::~Shader()
@@ -12,18 +13,32 @@ Shader::~Shader()
     glDeleteShader(*it);
   }
 
-  if (m_shaderProg != 0)
+  if (m_vertexLightProg != 0)
   {
-    glDeleteProgram(m_shaderProg);
-    m_shaderProg = 0;
+    glDeleteProgram(m_vertexLightProg);
+    m_vertexLightProg = 0;
+  }
+
+  if (m_fragmentLightProg != 0)
+  {
+    glDeleteProgram(m_fragmentLightProg);
+    m_fragmentLightProg = 0;
   }
 }
 
 bool Shader::Initialize()
 {
-  m_shaderProg = glCreateProgram();
+  m_vertexLightProg = glCreateProgram();
 
-  if (m_shaderProg == 0) 
+  if (m_vertexLightProg == 0) 
+  {
+    std::cerr << "Error creating shader program\n";
+    return false;
+  }
+
+  m_fragmentLightProg = glCreateProgram();
+
+  if (m_fragmentLightProg == 0) 
   {
     std::cerr << "Error creating shader program\n";
     return false;
@@ -33,10 +48,10 @@ bool Shader::Initialize()
 }
 
 // Use this method to add shaders to the program. When finished - call finalize()
-bool Shader::AddShader(GLenum ShaderType)
+bool Shader::AddShader(GLenum ShaderType, std::string shaderFile)
 {
   std::string s;
-  s = LoadShader(ShaderType);
+  s = LoadShader(ShaderType, shaderFile);
 
   GLuint ShaderObj = glCreateShader(ShaderType);
 
@@ -68,22 +83,32 @@ bool Shader::AddShader(GLenum ShaderType)
     return false;
   }
 
-  glAttachShader(m_shaderProg, ShaderObj);
+  if (shaderFile.find("norm") != std::string::npos)
+  {
+    glAttachShader(m_vertexLightProg, ShaderObj);
+  }
+  else
+  {
+    glAttachShader(m_fragmentLightProg, ShaderObj);
+  }
 
   return true;
 }
 
 //Function to load the shaders from a file. 
 //Called in AddShader()
-std::string Shader::LoadShader(GLenum ShaderType)
+std::string Shader::LoadShader(GLenum ShaderType, std::string shaderFile)
 {
   std::string s;
   std::string line = "";
 
+  std::string tempString = "../shaders/";
+  tempString.append(shaderFile);
+
   if(ShaderType == GL_VERTEX_SHADER)
   {
     std::ifstream myFile;
-    myFile.open("../shaders/vShader.vert");
+    myFile.open(tempString);
 
     if (myFile.is_open())
     {
@@ -104,7 +129,7 @@ std::string Shader::LoadShader(GLenum ShaderType)
   else if(ShaderType == GL_FRAGMENT_SHADER)
   {
     std::ifstream myFile;
-    myFile.open("../shaders/fShader.frag");
+    myFile.open(tempString);
 
     if (myFile.is_open())
     {
@@ -133,21 +158,40 @@ bool Shader::Finalize()
   GLint Success = 0;
   GLchar ErrorLog[1024] = { 0 };
 
-  glLinkProgram(m_shaderProg);
+  glLinkProgram(m_vertexLightProg);
 
-  glGetProgramiv(m_shaderProg, GL_LINK_STATUS, &Success);
+  glGetProgramiv(m_vertexLightProg, GL_LINK_STATUS, &Success);
   if (Success == 0)
   {
-    glGetProgramInfoLog(m_shaderProg, sizeof(ErrorLog), NULL, ErrorLog);
+    glGetProgramInfoLog(m_vertexLightProg, sizeof(ErrorLog), NULL, ErrorLog);
     std::cerr << "Error linking shader program: " << ErrorLog << std::endl;
     return false;
   }
 
-  glValidateProgram(m_shaderProg);
-  glGetProgramiv(m_shaderProg, GL_VALIDATE_STATUS, &Success);
+  glValidateProgram(m_vertexLightProg);
+  glGetProgramiv(m_vertexLightProg, GL_VALIDATE_STATUS, &Success);
   if (!Success)
   {
-    glGetProgramInfoLog(m_shaderProg, sizeof(ErrorLog), NULL, ErrorLog);
+    glGetProgramInfoLog(m_vertexLightProg, sizeof(ErrorLog), NULL, ErrorLog);
+    std::cerr << "Invalid shader program: " << ErrorLog << std::endl;
+    return false;
+  }
+
+  glLinkProgram(m_fragmentLightProg);
+
+  glGetProgramiv(m_fragmentLightProg, GL_LINK_STATUS, &Success);
+  if (Success == 0)
+  {
+    glGetProgramInfoLog(m_fragmentLightProg, sizeof(ErrorLog), NULL, ErrorLog);
+    std::cerr << "Error linking shader program: " << ErrorLog << std::endl;
+    return false;
+  }
+
+  glValidateProgram(m_fragmentLightProg);
+  glGetProgramiv(m_fragmentLightProg, GL_VALIDATE_STATUS, &Success);
+  if (!Success)
+  {
+    glGetProgramInfoLog(m_fragmentLightProg, sizeof(ErrorLog), NULL, ErrorLog);
     std::cerr << "Invalid shader program: " << ErrorLog << std::endl;
     return false;
   }
@@ -163,16 +207,32 @@ bool Shader::Finalize()
   return true;
 }
 
-
-void Shader::Enable()
+//selector is 0 or 1
+void Shader::Enable(int selector)
 {
-    glUseProgram(m_shaderProg);
+    if (selector == 0)
+    {
+      glUseProgram(m_vertexLightProg);
+    }
+    else 
+    {
+      glUseProgram(m_fragmentLightProg);
+    }
 }
 
 
-GLint Shader::GetUniformLocation(const char* pUniformName)
+GLint Shader::GetUniformLocation(const char* pUniformName, int selector)
 {
-    GLuint Location = glGetUniformLocation(m_shaderProg, pUniformName);
+    GLuint Location;
+
+    if (selector == 0)
+    {
+      Location = glGetUniformLocation(m_vertexLightProg, pUniformName);
+    }
+    else
+    {
+      Location = glGetUniformLocation(m_fragmentLightProg, pUniformName);
+    }
 
     if (Location == INVALID_UNIFORM_LOCATION) {
         fprintf(stderr, "Warning! Unable to get the location of uniform '%s'\n", pUniformName);

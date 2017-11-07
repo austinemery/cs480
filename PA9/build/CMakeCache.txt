@@ -147,7 +147,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=PA9
+CMAKE_PROJECT_NAME:STATIC=Pinball
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -204,6 +204,12 @@ GLEW_INCLUDE_PATH:PATH=/usr/include
 //Path to a library.
 GLEW_LIBRARY_PATH:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLEW.so
 
+GLFW_BUILD_DOCS:BOOL=OFF
+
+GLFW_BUILD_EXAMPLES:BOOL=OFF
+
+GLFW_BUILD_TESTS:BOOL=OFF
+
 //The directory where glm/glm.hpp resides
 GLM_INCLUDE_DIR:PATH=/usr/include
 
@@ -249,14 +255,14 @@ OPENGL_glu_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLU.so
 //Path to a file.
 OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
 
-//Value Computed by CMake
-PA9_BINARY_DIR:STATIC=/home/austin/workspace/cs480Emery/PA9/build
-
-//Value Computed by CMake
-PA9_SOURCE_DIR:STATIC=/home/austin/workspace/cs480Emery/PA9
-
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+//Value Computed by CMake
+Pinball_BINARY_DIR:STATIC=/home/austin/workspace/cs480Emery/PA9/build
+
+//Value Computed by CMake
+Pinball_SOURCE_DIR:STATIC=/home/austin/workspace/cs480Emery/PA9
 
 //Path to a library.
 SDL2MAIN_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL2main.a
@@ -441,6 +447,40 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libGL.so
 FIND_PACKAGE_MESSAGE_DETAILS_SDL2:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2.so;-lpthread][/usr/include/SDL2][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+GLFW_CFLAGS:INTERNAL=-I/usr/include/libdrm
+GLFW_CFLAGS_I:INTERNAL=
+GLFW_CFLAGS_OTHER:INTERNAL=
+GLFW_FOUND:INTERNAL=1
+GLFW_INCLUDEDIR:INTERNAL=/usr/include
+GLFW_INCLUDE_DIRS:INTERNAL=/usr/include/libdrm
+GLFW_LDFLAGS:INTERNAL=-lglfw
+GLFW_LDFLAGS_OTHER:INTERNAL=
+GLFW_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+GLFW_LIBRARIES:INTERNAL=glfw
+GLFW_LIBRARY_DIRS:INTERNAL=
+GLFW_LIBS:INTERNAL=
+GLFW_LIBS_L:INTERNAL=
+GLFW_LIBS_OTHER:INTERNAL=
+GLFW_LIBS_PATHS:INTERNAL=
+GLFW_PREFIX:INTERNAL=/usr
+GLFW_STATIC_CFLAGS:INTERNAL=-I/usr/include/libdrm
+GLFW_STATIC_CFLAGS_I:INTERNAL=
+GLFW_STATIC_CFLAGS_OTHER:INTERNAL=
+GLFW_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/libdrm
+GLFW_STATIC_LDFLAGS:INTERNAL=-lglfw;-lrt;-lm;-ldl;-lXrandr;-lXinerama;-lXi;-lXcursor;-lXrender;-lGL;-lm;-lpthread;-ldl;-ldrm;-lXdamage;-lXfixes;-lX11-xcb;-lxcb-glx;-lxcb-dri2;-lXxf86vm;-lXext;-lX11;-lpthread;-lxcb;-lXau;-lXdmcp
+GLFW_STATIC_LDFLAGS_OTHER:INTERNAL=
+GLFW_STATIC_LIBDIR:INTERNAL=
+GLFW_STATIC_LIBRARIES:INTERNAL=glfw;rt;m;dl;Xrandr;Xinerama;Xi;Xcursor;Xrender;GL;m;pthread;dl;drm;Xdamage;Xfixes;X11-xcb;xcb-glx;xcb-dri2;Xxf86vm;Xext;X11;pthread;xcb;Xau;Xdmcp
+GLFW_STATIC_LIBRARY_DIRS:INTERNAL=
+GLFW_STATIC_LIBS:INTERNAL=
+GLFW_STATIC_LIBS_L:INTERNAL=
+GLFW_STATIC_LIBS_OTHER:INTERNAL=
+GLFW_STATIC_LIBS_PATHS:INTERNAL=
+GLFW_VERSION:INTERNAL=3.1.2
+GLFW_glfw3_INCLUDEDIR:INTERNAL=
+GLFW_glfw3_LIBDIR:INTERNAL=
+GLFW_glfw3_PREFIX:INTERNAL=
+GLFW_glfw3_VERSION:INTERNAL=
 //ADVANCED property for variable: GLM_INCLUDE_DIR
 GLM_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: IMAGEMAGICK_BINARY_PATH
@@ -500,6 +540,7 @@ PC_Magick++_VERSION:INTERNAL=6.8.9
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 SDL2_LIBRARY_TEMP:INTERNAL=/usr/lib/x86_64-linux-gnu/libSDL2main.a;/usr/lib/x86_64-linux-gnu/libSDL2.so;-lpthread
+__pkg_config_checked_GLFW:INTERNAL=1
 __pkg_config_checked_PC_Magick++:INTERNAL=1
 prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 

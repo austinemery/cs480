@@ -38,6 +38,8 @@ class Engine
     float zoom;
     float velocityX;
     float velocityZ;
+
+    int shaderSelector;
 };
 
 #endif // ENGINE_H

@@ -1,4 +1,4 @@
-# PA9: LIGHTING
+# PA10: Pinball
 
 # Dependencies, Building, and Running
 
@@ -15,13 +15,18 @@ Left/right arrow : will pan left and right around point
 
 W A S D : will move the cube
 
+
+
+## EXTRA CREDIT
+All of our objects are load via triangle meshes
+
+
 ## FEATURES
 The cube can get stuck. Do try to do that. If you do you lose and will have to restart.
 
 ### Ubuntu/Linux
 ```bash
 sudo apt-get install libglew-dev libglm-dev libsdl2-dev
-sudo apt-get install libglew-dev libglm-dev libsdl2-dev 
 sudo apt-get install libassimp-dev
 sudo apt-get install libmagick++-dev
 sudo apt-get install libbullet-dev

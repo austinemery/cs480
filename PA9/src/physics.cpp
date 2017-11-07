@@ -79,25 +79,7 @@ void Physics::updateCubeVelocity(float velocityX, float velocityZ)
 {
 	//2 is the index of the cube
 	btVector3 velocityVec = {velocityX, 0, velocityZ};
+  btVector3 locVec = {0, 0, 0};
 	//std::cout << velocityX << ' ' << velocityZ << std::endl;
-	physicsObjectVector[0]->setLinearVelocity(velocityVec);
-}
-
-void Physics::shakeTable()
-{
-  dynamicsWorld->setGravity(btVector3(-5.0f, 0, 0));
-
-  for (int i = 0; i < 100; ++i)
-  {
-    dynamicsWorld->stepSimulation(18, 1);
-  }
-
-  dynamicsWorld->setGravity(btVector3(5.0f, 0, 0));
-
-  for (int i = 0; i < 100; ++i)
-  {
-    dynamicsWorld->stepSimulation(18, 1);
-  }
-
-  dynamicsWorld->setGravity(btVector3(0, -9.81f, 0));
+	physicsObjectVector[2]->applyCentralForce(velocityVec);
 }

@@ -78,7 +78,6 @@ bool Graphics::Initialize(int width, int height)
 
   cube_1 = new Object("cube", objTriMesh);
   btCollisionShape *cubeShape = new btConvexTriangleMeshShape(objTriMesh, true);
-  cubeShape->setMargin(0.1f);
   btDefaultMotionState *cubeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(-5, 10, -5)));
   m_physics->addObject(cubeShape, cubeMotionState, 1);
 
@@ -95,11 +94,8 @@ bool Graphics::Initialize(int width, int height)
   
   ground_1 = new Object("table", objTriMesh);
   btCollisionShape *tableShape = new btBvhTriangleMeshShape(objTriMesh, true);
-  tableShape->setMargin(0.1f);
   btDefaultMotionState* tableMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 0, 0)));
   m_physics->addObject(tableShape, tableMotionState, 0);
-
-
 
   // Set up the shaders
   m_shader = new Shader();
@@ -110,14 +106,27 @@ bool Graphics::Initialize(int width, int height)
   }
 
   // Add the vertex shader
-  if(!m_shader->AddShader(GL_VERTEX_SHADER))
+  if(!m_shader->AddShader(GL_VERTEX_SHADER, "normVShader.vert"))
   {
     printf("Vertex Shader failed to Initialize\n");
     return false;
   }
 
   // Add the fragment shader
-  if(!m_shader->AddShader(GL_FRAGMENT_SHADER))
+  if(!m_shader->AddShader(GL_FRAGMENT_SHADER, "normFShader.frag"))
+  {
+    printf("Fragment Shader failed to Initialize\n");
+    return false;
+  }
+
+  if(!m_shader->AddShader(GL_VERTEX_SHADER, "testShaderV.vert"))
+  {
+    printf("Vertex Shader failed to Initialize\n");
+    return false;
+  }
+
+  // Add the fragment shader
+  if(!m_shader->AddShader(GL_FRAGMENT_SHADER, "testShaderF.frag"))
   {
     printf("Fragment Shader failed to Initialize\n");
     return false;
@@ -132,7 +141,7 @@ bool Graphics::Initialize(int width, int height)
 
   // Locate the projection matrix in the shader
   
-  m_projectionMatrix = m_shader->GetUniformLocation("projectionMatrix");
+  m_projectionMatrix = m_shader->GetUniformLocation("projectionMatrix", 0);
   if (m_projectionMatrix == INVALID_UNIFORM_LOCATION) 
   {
     printf("m_projectionMatrix not found\n");
@@ -140,7 +149,7 @@ bool Graphics::Initialize(int width, int height)
   }
 
   // Locate the view matrix in the shader
-  m_viewMatrix = m_shader->GetUniformLocation("viewMatrix");
+  m_viewMatrix = m_shader->GetUniformLocation("viewMatrix", 0);
   if (m_viewMatrix == INVALID_UNIFORM_LOCATION) 
   {
     printf("m_viewMatrix not found\n");
@@ -148,40 +157,12 @@ bool Graphics::Initialize(int width, int height)
   }
 
   // Locate the model matrix in the shader
-  m_modelMatrix = m_shader->GetUniformLocation("modelMatrix");
+  m_modelMatrix = m_shader->GetUniformLocation("modelMatrix", 0);
   if (m_modelMatrix == INVALID_UNIFORM_LOCATION) 
   {
     printf("m_modelMatrix not found\n");
     return false;
   }
-
-////////////////////////////////////////////////////////////////////////////////
-  // Locate the projection matrix in the shader
-  /*
-  p_projectionMatrix = m_shader->GetUniformLocation("projectionMatrix");
-  if (p_projectionMatrix == INVALID_UNIFORM_LOCATION) 
-  {
-    printf("p_projectionMatrix not found\n");
-    return false;
-  }
-
-  // Locate the view matrix in the shader
-  p_viewMatrix = m_shader->GetUniformLocation("viewMatrix");
-  if (p_viewMatrix == INVALID_UNIFORM_LOCATION) 
-  {
-    printf("p_viewMatrix not found\n");
-    return false;
-  }
-
-  // Locate the model matrix in the shader
-  p_modelMatrix = m_shader->GetUniformLocation("modelMatrix");
-  if (p_modelMatrix == INVALID_UNIFORM_LOCATION) 
-  {
-    printf("p_modelMatrix not found\n");
-    return false;
-  }
-  */
-//////////////////////////////////////////////////////////////////////////////////
 
   //enable depth testing
   glEnable(GL_DEPTH_TEST);
@@ -212,14 +193,14 @@ void Graphics::Update(unsigned int dt)
   cylinder_1->Update(dt, temp);
 }
 
-void Graphics::Render()
+void Graphics::Render(int shaderSelector)
 {
   //clear the screen
   glClearColor(0.0, 0.0, 0.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   // Start the correct program
-  m_shader->Enable();
+  m_shader->Enable(shaderSelector);
 
   // Send in the projection and view to the shader
   glUniformMatrix4fv(m_projectionMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetProjection())); 
@@ -292,4 +273,32 @@ Camera* Graphics::getCamera()
 Physics* Graphics::getPhysics()
 {
   return m_physics;
+}
+
+bool Graphics::shaderSwap(int shaderSelector)
+{
+  m_projectionMatrix = m_shader->GetUniformLocation("projectionMatrix", shaderSelector);
+  if (m_projectionMatrix == INVALID_UNIFORM_LOCATION) 
+  {
+    printf("m_projectionMatrix not found\n");
+    return false;
+  }
+
+  // Locate the view matrix in the shader
+  m_viewMatrix = m_shader->GetUniformLocation("viewMatrix", shaderSelector);
+  if (m_viewMatrix == INVALID_UNIFORM_LOCATION) 
+  {
+    printf("m_viewMatrix not found\n");
+    return false;
+  }
+
+  // Locate the model matrix in the shader
+  m_modelMatrix = m_shader->GetUniformLocation("modelMatrix", shaderSelector);
+  if (m_modelMatrix == INVALID_UNIFORM_LOCATION) 
+  {
+    printf("m_modelMatrix not found\n");
+    return false;
+  }
+
+  return true;
 }

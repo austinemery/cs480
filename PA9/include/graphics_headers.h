@@ -32,6 +32,10 @@
 
 #include <btBulletDynamicsCommon.h>
 
+// ImGui for menus
+#include "imgui.h"
+#include "imgui_impl_sdl_gl3.h"
+
 #define INVALID_UNIFORM_LOCATION 0x7fffffff
 
 struct Vertex
@@ -41,5 +45,10 @@ struct Vertex
 
   Vertex(glm::vec3 v, glm::vec2 u): vertex(v), uv(u) {}
 };
+
+static void error_callback(int error, const char* description)
+{
+  fprintf(stderr, "Error %d: %s\n", error, description);
+}
 
 #endif /* GRAPHICS_HEADERS_H */

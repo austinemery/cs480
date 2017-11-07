@@ -60,76 +60,76 @@ CMAKE_SOURCE_DIR = /home/austin/workspace/cs480Emery/PA9
 CMAKE_BINARY_DIR = /home/austin/workspace/cs480Emery/PA9/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/PA9_SUCCESSFUL.dir
+# Target rules for target CMakeFiles/Pinball_SUCCESSFUL.dir
 
 # All Build rule for target.
-CMakeFiles/PA9_SUCCESSFUL.dir/all: CMakeFiles/PA9.dir/all
-	$(MAKE) -f CMakeFiles/PA9_SUCCESSFUL.dir/build.make CMakeFiles/PA9_SUCCESSFUL.dir/depend
-	$(MAKE) -f CMakeFiles/PA9_SUCCESSFUL.dir/build.make CMakeFiles/PA9_SUCCESSFUL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/austin/workspace/cs480Emery/PA9/build/CMakeFiles --progress-num= "Built target PA9_SUCCESSFUL"
-.PHONY : CMakeFiles/PA9_SUCCESSFUL.dir/all
+CMakeFiles/Pinball_SUCCESSFUL.dir/all: CMakeFiles/Pinball.dir/all
+	$(MAKE) -f CMakeFiles/Pinball_SUCCESSFUL.dir/build.make CMakeFiles/Pinball_SUCCESSFUL.dir/depend
+	$(MAKE) -f CMakeFiles/Pinball_SUCCESSFUL.dir/build.make CMakeFiles/Pinball_SUCCESSFUL.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/austin/workspace/cs480Emery/PA9/build/CMakeFiles --progress-num= "Built target Pinball_SUCCESSFUL"
+.PHONY : CMakeFiles/Pinball_SUCCESSFUL.dir/all
 
 # Include target in all.
-all: CMakeFiles/PA9_SUCCESSFUL.dir/all
+all: CMakeFiles/Pinball_SUCCESSFUL.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/PA9_SUCCESSFUL.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/austin/workspace/cs480Emery/PA9/build/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/PA9_SUCCESSFUL.dir/all
+CMakeFiles/Pinball_SUCCESSFUL.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/austin/workspace/cs480Emery/PA9/build/CMakeFiles 13
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Pinball_SUCCESSFUL.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/austin/workspace/cs480Emery/PA9/build/CMakeFiles 0
-.PHONY : CMakeFiles/PA9_SUCCESSFUL.dir/rule
+.PHONY : CMakeFiles/Pinball_SUCCESSFUL.dir/rule
 
 # Convenience name for target.
-PA9_SUCCESSFUL: CMakeFiles/PA9_SUCCESSFUL.dir/rule
+Pinball_SUCCESSFUL: CMakeFiles/Pinball_SUCCESSFUL.dir/rule
 
-.PHONY : PA9_SUCCESSFUL
-
-# clean rule for target.
-CMakeFiles/PA9_SUCCESSFUL.dir/clean:
-	$(MAKE) -f CMakeFiles/PA9_SUCCESSFUL.dir/build.make CMakeFiles/PA9_SUCCESSFUL.dir/clean
-.PHONY : CMakeFiles/PA9_SUCCESSFUL.dir/clean
+.PHONY : Pinball_SUCCESSFUL
 
 # clean rule for target.
-clean: CMakeFiles/PA9_SUCCESSFUL.dir/clean
+CMakeFiles/Pinball_SUCCESSFUL.dir/clean:
+	$(MAKE) -f CMakeFiles/Pinball_SUCCESSFUL.dir/build.make CMakeFiles/Pinball_SUCCESSFUL.dir/clean
+.PHONY : CMakeFiles/Pinball_SUCCESSFUL.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Pinball_SUCCESSFUL.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/PA9.dir
+# Target rules for target CMakeFiles/Pinball.dir
 
 # All Build rule for target.
-CMakeFiles/PA9.dir/all:
-	$(MAKE) -f CMakeFiles/PA9.dir/build.make CMakeFiles/PA9.dir/depend
-	$(MAKE) -f CMakeFiles/PA9.dir/build.make CMakeFiles/PA9.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/austin/workspace/cs480Emery/PA9/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target PA9"
-.PHONY : CMakeFiles/PA9.dir/all
+CMakeFiles/Pinball.dir/all:
+	$(MAKE) -f CMakeFiles/Pinball.dir/build.make CMakeFiles/Pinball.dir/depend
+	$(MAKE) -f CMakeFiles/Pinball.dir/build.make CMakeFiles/Pinball.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/austin/workspace/cs480Emery/PA9/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target Pinball"
+.PHONY : CMakeFiles/Pinball.dir/all
 
 # Include target in all.
-all: CMakeFiles/PA9.dir/all
+all: CMakeFiles/Pinball.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/PA9.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/austin/workspace/cs480Emery/PA9/build/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/PA9.dir/all
+CMakeFiles/Pinball.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/austin/workspace/cs480Emery/PA9/build/CMakeFiles 13
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Pinball.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/austin/workspace/cs480Emery/PA9/build/CMakeFiles 0
-.PHONY : CMakeFiles/PA9.dir/rule
+.PHONY : CMakeFiles/Pinball.dir/rule
 
 # Convenience name for target.
-PA9: CMakeFiles/PA9.dir/rule
+Pinball: CMakeFiles/Pinball.dir/rule
 
-.PHONY : PA9
-
-# clean rule for target.
-CMakeFiles/PA9.dir/clean:
-	$(MAKE) -f CMakeFiles/PA9.dir/build.make CMakeFiles/PA9.dir/clean
-.PHONY : CMakeFiles/PA9.dir/clean
+.PHONY : Pinball
 
 # clean rule for target.
-clean: CMakeFiles/PA9.dir/clean
+CMakeFiles/Pinball.dir/clean:
+	$(MAKE) -f CMakeFiles/Pinball.dir/build.make CMakeFiles/Pinball.dir/clean
+.PHONY : CMakeFiles/Pinball.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Pinball.dir/clean
 
 .PHONY : clean
 

@@ -17,7 +17,6 @@ class Physics
     void addGroundPlane(btCollisionShape*);
     void addObject(btCollisionShape*, btDefaultMotionState*, int);
     void updateCubeVelocity(float, float);
-    void shakeTable();
 
   private:
     btBroadphaseInterface* broadphase;

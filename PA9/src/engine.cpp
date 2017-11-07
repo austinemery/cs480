@@ -50,6 +50,8 @@ bool Engine::Initialize()
   rotation = 0.0f;
   zoom = 1.0f;
 
+  shaderSelector = 0;
+
   // No errors
   return true;
 }
@@ -71,9 +73,13 @@ void Engine::Run()
     // Update the DT
     m_DT = getDT();
 
+    //m_window->RunMenu();
+
     // Update and render the graphics
     m_graphics->Update(m_DT);
-    m_graphics->Render();
+    m_graphics->Render(shaderSelector);
+
+    m_window->RunMenu();
 
     // Swap to the Window
     m_window->Swap();
@@ -212,8 +218,22 @@ void Engine::Keyboard(float& p_rotationDir, float& p_orbitDir, float& m_rotation
     //space
     else if(m_event.key.keysym.scancode == 44)
     {
-      m_graphics->getPhysics()->shakeTable();
+      
     }
+  }
+
+  //For swaping shader programs
+  if (m_event.key.keysym.scancode == SDL_SCANCODE_V)
+  {
+  	std::cout << "Vertex Lighting Mode" << std::endl;
+  	shaderSelector = 0;
+  	m_graphics->shaderSwap(shaderSelector);
+  }
+  if (m_event.key.keysym.scancode == SDL_SCANCODE_F)
+  {
+  	std::cout << "Fragment Lighting Mode" << std::endl;
+  	shaderSelector = 1;
+  	m_graphics->shaderSwap(shaderSelector);
   }
 
   //For rotating around a point, right mouse button and move the mouse
