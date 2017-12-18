@@ -1,16 +1,20 @@
 # Final Project: Hangman
 ## Controls
+```bash
 ESC : Quits
-A-Z : Attepmt a letter
+A-Z : Attempt a letter
 MouseWheel : Zoom
 RightClick : Adjust Camera
 
-Menu: Change Lighting Settings
-	  Change Gravity Angle
+Menu: Change Lighting Settings Change Gravity Angle
+```
 
 ## Features
+
+```bash
 A softbody Rope
 A functional Hangman game!
+```
 
 ## Dependency Instructions
 For both of the operating systems to run this project installation of these three programs are required [GLEW](http://glew.sourceforge.net/), [GLM](http://glm.g-truc.net/0.9.7/index.html), and [SDL2](https://wiki.libsdl.org/Tutorials). 
